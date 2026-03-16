@@ -4,7 +4,7 @@
 Launch an autonomous online business capable of reaching $10,000/month recurring revenue with less than $500 in startup cost.
 
 ## Chosen business
-MarketPulse AI: automated local market reports and marketing content for real estate professionals.
+LocalSignal AI: automated local market reports and marketing content for real estate professionals.
 
 ## Phase 1 — MVP (days 1-3)
 - Create landing page

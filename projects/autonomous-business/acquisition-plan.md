@@ -11,6 +11,9 @@ Get the first 3 paying customers as fast as possible using low-cost, repeatable 
 ## Offer
 Free sample report for their city + brand voice.
 
+## Positioning
+Do **not** lead with “AI content generator.” Lead with **hyperlocal, data-backed market intelligence packaged as ready-to-send marketing assets**. Generic content tools are crowded; local insight + usable outputs is the wedge.
+
 ## Outreach angles
 - "Look like the local expert without spending hours writing content"
 - "Turn market data into weekly posts and newsletters automatically"

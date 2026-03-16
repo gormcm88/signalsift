@@ -15,6 +15,7 @@ _Learn about the person you're helping. Update this as you go._
 - Key interests: stock trading, marketing, entrepreneurial ventures.
 - Interested in learning what the assistant can do, especially in business-building contexts.
 - Actively testing Judith by assigning autonomous business-building tasks with strong ROI expectations.
+- Approves Judith choosing brands, domains, and deployment paths when justified.
 
 ---
 

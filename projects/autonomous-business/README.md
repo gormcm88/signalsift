@@ -1,7 +1,7 @@
 # Autonomous Business Build
 
 ## Chosen business
-**MarketPulse AI** — an automated subscription service that generates hyperlocal real estate market reports, social posts, email newsletters, and listing/seller content for real estate agents, teams, lenders, and brokerages.
+**LocalSignal AI** — an automated subscription service that generates hyperlocal real estate market reports, social posts, email newsletters, and listing/seller content for real estate agents, teams, lenders, and brokerages.
 
 ## Why this business
 - 100% online product and delivery

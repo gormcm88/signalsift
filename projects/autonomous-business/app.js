@@ -16,7 +16,7 @@ function pct(value) {
   return `${sign}${value.toFixed(1)}%`;
 }
 
-function generateNarrative(market, brand = 'MarketPulse AI', audience = 'buyers and sellers', tone = 'professional') {
+function generateNarrative(market, brand = 'LocalSignal AI', audience = 'buyers and sellers', tone = 'professional') {
   const priceDirection = trendWord(market.medianPriceChangeYoY, 'increased', 'declined');
   const invDirection = trendWord(market.inventoryChangeYoY, 'expanded', 'contracted');
   const domDirection = trendWord(market.daysOnMarketChangeYoY, 'slowed', 'sped up');
