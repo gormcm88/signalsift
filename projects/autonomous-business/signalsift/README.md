@@ -28,9 +28,20 @@ Track the companies you care about and get alerted when something changes that c
 - recruiters targeting active hirers
 - consultants looking for outreach triggers
 
-## Next milestone
+## Current status
 Working local prototype with:
 - watchlist input
 - snapshot store
 - change detection
 - alert generation
+- local dashboard
+
+## Run locally
+```bash
+python3 projects/autonomous-business/signalsift/monitor.py
+python3 -m http.server 4175
+```
+Then open:
+- `/projects/autonomous-business/signalsift/index.html`
+- `/projects/autonomous-business/signalsift/prototype.html`
+- `/projects/autonomous-business/signalsift/dashboard.html`

@@ -1,0 +1,11 @@
+[
+  {
+    "company": "Example Dental Group",
+    "url": "https://example.com",
+    "signals": [
+      "initial snapshot created"
+    ],
+    "angle": "Example Dental Group was added to monitoring. Wait for the next change before outreach.",
+    "createdAt": "2026-03-16T22:15:46.814102+00:00"
+  }
+]
