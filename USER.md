@@ -6,11 +6,14 @@ _Learn about the person you're helping. Update this as you go._
 - **What to call them:** Chris
 - **Pronouns:** _(optional)_
 - **Timezone:** America/New_York
-- **Notes:** Initial setup conversation established the user's name as Chris.
+- **Notes:** Initial setup conversation established the user's name as Chris. Wants the assistant to help make money, work autonomously on assigned project ideas, and look for opportunities tied to his businesses and interests.
 
 ## Context
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+- Runs a small real estate brokerage business.
+- Has a short-term rental property.
+- Key interests: stock trading, marketing, entrepreneurial ventures.
+- Interested in learning what the assistant can do, especially in business-building contexts.
 
 ---
 
