@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignalSift Prototype</title>
+  <style>
+    body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+    h1 { font-size: 40px; margin: 0 0 10px; }
+    p { color: #475569; font-size: 17px; line-height: 1.6; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; }
+    th, td { padding: 16px; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; font-size: 14px; text-transform: uppercase; letter-spacing: .04em; }
+    .muted { color: #64748b; font-size: 14px; }
+    button { background: #111827; color: white; border: none; border-radius: 10px; padding: 10px 14px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>SignalSift prototype</h1>
+    <p>This MVP shows the product shape: tracked companies in, detected changes out, with an outreach angle attached to each signal. Right now it uses sample data. Next step is live fetch/snapshot storage.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Detected signals</th>
+          <th>Suggested angle</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

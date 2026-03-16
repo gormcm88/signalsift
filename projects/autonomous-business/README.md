@@ -59,3 +59,6 @@ Under $500 to MVP:
 
 ## Reality check
 This has a plausible path to $10k MRR, but not a guarantee. The hard part is distribution, not generation. The product can be made autonomous; customer acquisition will still need systems, channels, and iteration.
+
+## Status
+LocalSignal AI is now the secondary/fallback concept. The primary active concept is SignalSift (see `projects/autonomous-business/signalsift/` and `pivot-analysis.md`).

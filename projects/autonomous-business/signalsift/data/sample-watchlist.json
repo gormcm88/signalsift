@@ -1,0 +1,47 @@
+[
+  {
+    "company": "BrightPath Dental",
+    "url": "https://brightpathdental.example",
+    "category": "dental",
+    "lastTitle": "BrightPath Dental | Family Dentistry in Austin",
+    "currentTitle": "BrightPath Dental | Same-Day Emergency Dentist in Austin",
+    "lastMeta": "Family dentistry for Austin patients.",
+    "currentMeta": "Same-day emergency dentist and family dentistry in Austin. New patient specials available.",
+    "lastReviewRating": 4.8,
+    "currentReviewRating": 4.3,
+    "lastReviewCount": 118,
+    "currentReviewCount": 137,
+    "lastHiring": 0,
+    "currentHiring": 3
+  },
+  {
+    "company": "Northstar HVAC",
+    "url": "https://northstarhvac.example",
+    "category": "home services",
+    "lastTitle": "Northstar HVAC | Heating and Cooling Repair",
+    "currentTitle": "Northstar HVAC | Heating, Cooling, and Commercial Maintenance Plans",
+    "lastMeta": "Heating and cooling repairs for homeowners.",
+    "currentMeta": "Heating, cooling, commercial HVAC, and maintenance plans across greater Nashville.",
+    "lastReviewRating": 4.6,
+    "currentReviewRating": 4.7,
+    "lastReviewCount": 86,
+    "currentReviewCount": 112,
+    "lastHiring": 1,
+    "currentHiring": 4
+  },
+  {
+    "company": "Maple Ridge Physical Therapy",
+    "url": "https://mapleridgept.example",
+    "category": "healthcare",
+    "lastTitle": "Maple Ridge Physical Therapy",
+    "currentTitle": "Maple Ridge Physical Therapy | Sports Rehab & Pelvic Health",
+    "lastMeta": "Local physical therapy clinic.",
+    "currentMeta": "Sports rehab, pelvic health, and manual therapy in Miami.",
+    "lastReviewRating": 4.9,
+    "currentReviewRating": 4.9,
+    "lastReviewCount": 64,
+    "currentReviewCount": 68,
+    "lastHiring": 0,
+    "currentHiring": 1
+  }
+]
