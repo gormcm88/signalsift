@@ -50,10 +50,10 @@ Under $500 to MVP:
 ## Near-term build plan
 - [x] Pick business model
 - [x] Define pricing and autonomous workflow
-- [ ] Build landing page
-- [ ] Build sample report generator
-- [ ] Build content generation prompts/templates
-- [ ] Build lead capture
+- [x] Build landing page
+- [x] Build sample report generator
+- [x] Build content generation prompts/templates
+- [x] Build lead capture
 - [ ] Add automated email delivery
 - [ ] Define acquisition experiments
 

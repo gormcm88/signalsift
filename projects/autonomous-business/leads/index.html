@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarketPulse AI — Get a free sample report</title>
+  <style>
+    body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; background: #f8fafc; color: #111827; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px; }
+    .card { background: white; border: 1px solid #e5e7eb; border-radius: 18px; padding: 28px; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
+    h1 { font-size: 40px; margin: 0 0 12px; }
+    p { font-size: 18px; line-height: 1.6; color: #4b5563; }
+    label { display: block; margin: 16px 0 6px; font-weight: 600; }
+    input, textarea, select { width: 100%; padding: 12px 14px; font: inherit; border-radius: 10px; border: 1px solid #d1d5db; }
+    button { margin-top: 18px; background: #111827; color: #fff; border: none; border-radius: 10px; padding: 14px 18px; font: inherit; cursor: pointer; }
+    .note { margin-top: 18px; padding: 14px; border-radius: 12px; background: #eff6ff; color: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Get a free market content sample</h1>
+      <p>Tell us your market and brand voice. We’ll generate a sample market update, newsletter draft, and social content pack. This MVP stores leads locally in your browser for now; next step is wiring it into email delivery.</p>
+      <form id="lead-form">
+        <label>Name</label>
+        <input name="name" required />
+        <label>Email</label>
+        <input type="email" name="email" required />
+        <label>Market / city</label>
+        <input name="market" required placeholder="Austin, TX" />
+        <label>Company / team</label>
+        <input name="company" />
+        <label>Tone</label>
+        <select name="tone">
+          <option>Professional</option>
+          <option>Friendly</option>
+          <option>Punchy</option>
+        </select>
+        <label>Notes</label>
+        <textarea name="notes" placeholder="Who do you market to? Buyers, sellers, investors?"></textarea>
+        <button type="submit">Save lead</button>
+      </form>
+      <div class="note" id="note" hidden></div>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('lead-form');
+    const note = document.getElementById('note');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const leads = JSON.parse(localStorage.getItem('marketpulse-leads') || '[]');
+      leads.push({ ...data, createdAt: new Date().toISOString() });
+      localStorage.setItem('marketpulse-leads', JSON.stringify(leads));
+      note.hidden = false;
+      note.textContent = `Saved lead for ${data.name}. Next step: wire this form to a real backend or email workflow.`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>

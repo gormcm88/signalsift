@@ -44,10 +44,16 @@ MarketPulse AI: automated local market reports and marketing content for real es
 - total target: under $100 to initial launch
 
 ## What I can do next without more access
-- build the report generator prototype
-- build intake form + simple storage
 - build SEO page templates
 - write cold outreach scripts and onboarding emails
+- add a lightweight JSON-based backend for lead capture
+- prepare deployment config for free hosting
+
+## Completed in workspace
+- landing page built
+- sample report generator built
+- lead capture prototype built
+- sample market dataset created
 
 ## What I need from Chris when ready
 - permission to choose or approve a brand/domain
