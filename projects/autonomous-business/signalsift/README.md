@@ -41,9 +41,16 @@ Working local prototype with:
 ## Run locally
 ```bash
 python3 projects/autonomous-business/signalsift/monitor.py
+python3 projects/autonomous-business/signalsift/export_alerts.py
+python3 projects/autonomous-business/signalsift/email_digest.py
 python3 -m http.server 4175
 ```
 Then open:
 - `/projects/autonomous-business/signalsift/index.html`
 - `/projects/autonomous-business/signalsift/prototype.html`
 - `/projects/autonomous-business/signalsift/dashboard.html`
+
+Generated artifacts:
+- `alerts.csv`
+- `daily-digest.md`
+- normalized `alerts.json`

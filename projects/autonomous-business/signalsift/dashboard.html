@@ -45,7 +45,7 @@
       const localWatchlist = JSON.parse(localStorage.getItem('signalsift-watchlist') || '[]');
       document.getElementById('watchlist').innerHTML = watchlist.map(x => `<li><strong>${x.company}</strong> — ${x.url}</li>`).join('') || '<li>No file-based targets yet.</li>';
       document.getElementById('local-watchlist').innerHTML = localWatchlist.map(x => `<li><strong>${x.company}</strong> — ${x.url}</li>`).join('') || '<li>No browser-side targets yet. Use watchlist editor.</li>';
-      document.getElementById('alerts').innerHTML = alerts.slice().reverse().slice(0, 15).map(a => `<li><strong>${a.company}</strong>: ${a.signals.join(', ')}<br>${a.angle}</li>`).join('') || '<li>No alerts yet.</li>';
+      document.getElementById('alerts').innerHTML = alerts.slice().reverse().slice(0, 15).map(a => `<li><strong>${a.company}</strong> <em>(${a.severity || 'low'})</em>: ${a.signals.join(', ')}<br>${a.angle}</li>`).join('') || '<li>No alerts yet.</li>';
       document.getElementById('snapshots').textContent = JSON.stringify(snapshots, null, 2);
     });
   </script>

@@ -1,0 +1,4 @@
+company,url,category,severity,signals,angle,createdAt
+Example Dental Group,https://example.com,,low,initial snapshot created,Example Dental Group was added to monitoring. Wait for the next change before outreach.,2026-03-16T22:15:46.814102+00:00
+Example Dental Group,https://example.com,dental,low,fetch failed,Could not fetch https://example.com: expected string or bytes-like object,2026-03-17T12:44:48.698294+00:00
+Example Dental Group,https://example.com,dental,medium,page content changed | new headings added: Example Domain,"Meaningful change: Example Dental Group added new on-page themes or service language. Useful signal for agencies, recruiters, or SDR teams that sell around business change.",2026-03-17T12:46:41.236325+00:00

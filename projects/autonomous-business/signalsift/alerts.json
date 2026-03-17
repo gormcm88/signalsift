@@ -6,7 +6,8 @@
       "initial snapshot created"
     ],
     "angle": "Example Dental Group was added to monitoring. Wait for the next change before outreach.",
-    "createdAt": "2026-03-16T22:15:46.814102+00:00"
+    "createdAt": "2026-03-16T22:15:46.814102+00:00",
+    "severity": "low"
   },
   {
     "company": "Example Dental Group",
@@ -16,6 +17,19 @@
       "fetch failed"
     ],
     "angle": "Could not fetch https://example.com: expected string or bytes-like object",
-    "createdAt": "2026-03-17T12:44:48.698294+00:00"
+    "createdAt": "2026-03-17T12:44:48.698294+00:00",
+    "severity": "low"
+  },
+  {
+    "company": "Example Dental Group",
+    "url": "https://example.com",
+    "category": "dental",
+    "severity": "medium",
+    "signals": [
+      "page content changed",
+      "new headings added: Example Domain"
+    ],
+    "angle": "Meaningful change: Example Dental Group added new on-page themes or service language. Useful signal for agencies, recruiters, or SDR teams that sell around business change.",
+    "createdAt": "2026-03-17T12:46:41.236325+00:00"
   }
 ]

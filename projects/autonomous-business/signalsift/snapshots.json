@@ -6,7 +6,16 @@
     "title": "Example Domain",
     "meta": "",
     "excerpt": "Example Domain Example Domain This domain is for use in documentation examples without needing permission. Avoid use in operations. Learn more",
-    "fingerprint": "a5f2b480b8e0dd6bffe282a17a61117ea1bba50830df6049a3b1301d78fb2de9",
-    "checkedAt": "2026-03-16T22:15:46.814102+00:00"
+    "headings": [
+      "Example Domain"
+    ],
+    "links": [
+      {
+        "href": "https://iana.org/domains/example",
+        "text": "Learn more"
+      }
+    ],
+    "fingerprint": "e61b3ee507977bc9d6ab6fcfc7a7c765e26c3d4e17ee718c7568a59819069d0d",
+    "checkedAt": "2026-03-17T12:46:41.236325+00:00"
   }
 ]

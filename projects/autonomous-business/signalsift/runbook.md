@@ -16,10 +16,10 @@ python3 -m http.server 4180
 ## Suggested next build priorities
 1. import localStorage watchlist into file-based runner flow
 2. better diffing around headings/offers/links
-3. classify signals by severity
-4. export leads / alerts CSV
-5. email digest generation
-6. hosted scheduler
+3. export leads / alerts CSV
+4. email digest generation
+5. hosted scheduler
+6. first live customer validation loop
 
 ## Manual customer validation flow
 1. pick a niche (agencies first)

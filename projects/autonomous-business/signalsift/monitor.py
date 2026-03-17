@@ -11,7 +11,7 @@ BASE = Path(__file__).resolve().parent
 WATCHLIST = BASE / 'watchlist.json'
 SNAPSHOTS = BASE / 'snapshots.json'
 ALERTS = BASE / 'alerts.json'
-USER_AGENT = 'SignalSiftBot/0.2 (+local prototype)'
+USER_AGENT = 'SignalSiftBot/0.3 (+local prototype)'
 
 
 def load_json(path, default):
@@ -37,7 +37,17 @@ def clean_text(text):
 
 def extract_many(pattern, html, flags=0, limit=8):
     matches = re.findall(pattern, html, flags)
-    return [clean_text(m) for m in matches if clean_text(m)][:limit]
+    out = []
+    for match in matches:
+        if isinstance(match, tuple):
+            cleaned = tuple(clean_text(x) for x in match)
+            if any(cleaned):
+                out.append(cleaned)
+        else:
+            cleaned = clean_text(match)
+            if cleaned:
+                out.append(cleaned)
+    return out[:limit]
 
 
 def extract_text(html):
@@ -48,19 +58,20 @@ def extract_text(html):
     meta = clean_text(meta_match.group(1)) if meta_match else ''
 
     headings = extract_many(r'<h[1-3][^>]*>(.*?)</h[1-3]>', html, re.I | re.S, limit=12)
-    links = extract_many(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', html, re.I | re.S, limit=30)
+    links = extract_many(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', html, re.I | re.S, limit=40)
     normalized_links = []
     for href, text in links:
         text = clean_text(text)
+        href = clean_text(href)
         if text and href and not href.startswith('#'):
-          normalized_links.append({'href': href, 'text': text})
+            normalized_links.append({'href': href, 'text': text})
 
     body = re.sub(r'<script.*?</script>', ' ', html, flags=re.I | re.S)
     body = re.sub(r'<style.*?</style>', ' ', body, flags=re.I | re.S)
     body = re.sub(r'<[^>]+>', ' ', body)
     body = clean_text(body)
     excerpt = body[:1200]
-    return title, meta, excerpt, headings, normalized_links[:15]
+    return title, meta, excerpt, headings, normalized_links[:20]
 
 
 def fingerprint(*parts):
@@ -98,17 +109,39 @@ def summarize_changes(previous, current):
     return signals
 
 
-def sales_angle(company, category, signals):
+def score_severity(signals):
+    score = 0
+    for signal in signals:
+        lower = signal.lower()
+        if 'new interesting links detected' in lower:
+            score += 3
+        elif 'new headings added' in lower:
+            score += 2
+        elif 'title changed' in lower or 'meta description changed' in lower:
+            score += 2
+        elif 'page content changed' in lower:
+            score += 1
+        elif 'fetch failed' in lower:
+            score += 1
+    if score >= 5:
+        return 'high'
+    if score >= 3:
+        return 'medium'
+    return 'low'
+
+
+def sales_angle(company, category, signals, severity):
     text = ' | '.join(signals)
+    prefix = {'high': 'High-signal change:', 'medium': 'Meaningful change:', 'low': 'Minor change:'}[severity]
     if 'meta description changed' in text or 'title changed' in text:
-        return f'{company} changed site messaging. That often means a new offer, repositioning, or active growth push — strong timing for outreach.'
+        return f'{prefix} {company} changed site messaging. That often means a new offer, repositioning, or active growth push — strong timing for outreach.'
     if 'new interesting links detected' in text:
-        return f'{company} appears to have added new service/location/careers pages. That can indicate expansion or a change in go-to-market priorities.'
+        return f'{prefix} {company} appears to have added new service/location/careers pages. That can indicate expansion or a change in go-to-market priorities.'
     if 'new headings added' in text:
-        return f'{company} added new on-page themes or service language. Useful signal for agencies, recruiters, or SDR teams that sell around business change.'
+        return f'{prefix} {company} added new on-page themes or service language. Useful signal for agencies, recruiters, or SDR teams that sell around business change.'
     if 'page content changed' in text:
-        return f'{company} updated site content recently. Good time to pitch SEO, CRO, recruiting, or demand generation help while priorities are moving.'
-    return f'{company} was added to monitoring. Wait for the next change before outreach.'
+        return f'{prefix} {company} updated site content recently. Good time to pitch SEO, CRO, recruiting, or demand generation help while priorities are moving.'
+    return f'{prefix} {company} was added to monitoring. Wait for the next change before outreach.'
 
 
 def run():
@@ -138,12 +171,14 @@ def run():
             signals = summarize_changes(previous, current)
             latest_by_url[url] = current
             if signals:
+                severity = score_severity(signals)
                 alerts.append({
                     'company': target['company'],
                     'url': url,
                     'category': target.get('category', ''),
+                    'severity': severity,
                     'signals': signals,
-                    'angle': sales_angle(target['company'], target.get('category', ''), signals),
+                    'angle': sales_angle(target['company'], target.get('category', ''), signals, severity),
                     'createdAt': current['checkedAt']
                 })
         except Exception as exc:
@@ -151,6 +186,7 @@ def run():
                 'company': target['company'],
                 'url': url,
                 'category': target.get('category', ''),
+                'severity': 'low',
                 'signals': ['fetch failed'],
                 'angle': f'Could not fetch {url}: {exc}',
                 'createdAt': datetime.now(timezone.utc).isoformat()
