@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignalSift Watchlist</title>
+  <style>
+    body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 40px 20px; }
+    h1 { font-size: 40px; margin: 0 0 10px; }
+    p { color: #475569; font-size: 17px; line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: 360px 1fr; gap: 20px; }
+    .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px; }
+    label { display:block; margin: 12px 0 6px; font-weight: 600; }
+    input { width:100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #cbd5e1; font: inherit; }
+    button { margin-top: 16px; background: #111827; color: white; border: none; border-radius: 10px; padding: 12px 16px; cursor: pointer; }
+    button.secondary { background: white; color: #111827; border: 1px solid #cbd5e1; margin-left: 10px; }
+    ul { padding-left: 20px; }
+    code, pre { background: #0f172a; color: #e2e8f0; border-radius: 12px; padding: 16px; display: block; overflow: auto; }
+    .muted { color: #64748b; font-size: 14px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Editable watchlist</h1>
+    <p>This is the browser-side MVP for creating a watchlist. Because this version is static, entries are stored in localStorage and can be exported as JSON for the monitor script.</p>
+    <div class="grid">
+      <section class="card">
+        <form id="watch-form">
+          <label>Company</label>
+          <input name="company" required />
+          <label>URL</label>
+          <input name="url" type="url" placeholder="https://example.com" required />
+          <label>Category</label>
+          <input name="category" placeholder="dental, agency, hvac..." />
+          <button type="submit">Add target</button>
+          <button type="button" class="secondary" id="clear-btn">Clear local list</button>
+        </form>
+      </section>
+      <section class="card">
+        <h2>Current local watchlist</h2>
+        <ul id="items"></ul>
+        <p class="muted">Copy this JSON into <code>watchlist.json</code> if you want the Python monitor to use it right away.</p>
+        <pre id="json"></pre>
+      </section>
+    </div>
+  </div>
+  <script>
+    const KEY = 'signalsift-watchlist';
+    const form = document.getElementById('watch-form');
+    const items = document.getElementById('items');
+    const json = document.getElementById('json');
+    const clearBtn = document.getElementById('clear-btn');
+
+    function getList() {
+      return JSON.parse(localStorage.getItem(KEY) || '[]');
+    }
+
+    function setList(list) {
+      localStorage.setItem(KEY, JSON.stringify(list));
+      render();
+    }
+
+    function render() {
+      const list = getList();
+      items.innerHTML = list.map((x, i) => `<li><strong>${x.company}</strong> — ${x.url} <button data-i="${i}">remove</button></li>`).join('') || '<li>No local targets yet.</li>';
+      json.textContent = JSON.stringify(list, null, 2);
+      items.querySelectorAll('button[data-i]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const next = getList();
+          next.splice(Number(btn.dataset.i), 1);
+          setList(next);
+        });
+      });
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const list = getList();
+      list.push(data);
+      setList(list);
+      form.reset();
+    });
+
+    clearBtn.addEventListener('click', () => setList([]));
+    render();
+  </script>
+</body>
+</html>

@@ -32,9 +32,11 @@ Track the companies you care about and get alerted when something changes that c
 Working local prototype with:
 - watchlist input
 - snapshot store
-- change detection
+- richer change detection (title, meta, headings, interesting links)
 - alert generation
 - local dashboard
+- browser-side editable watchlist
+- niche landing pages for early GTM
 
 ## Run locally
 ```bash
