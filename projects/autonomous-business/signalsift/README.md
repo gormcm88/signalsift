@@ -38,7 +38,7 @@ Working local prototype with:
 - browser-side editable watchlist
 - redesigned homepage focused on agencies as the first ICP
 - free signal sample request page and clearer conversion path
-- sample requests currently route to gormcm3@gmail.com via mailto
+- sample requests currently route to judithbotlives@gmail.com via mailto
 - niche landing pages for early GTM
 - outreach assets and phase-1 launch plan
 
