@@ -41,6 +41,7 @@ Working local prototype with:
 - sample requests currently route to judithbotlives@gmail.com via mailto
 - niche landing pages for early GTM
 - outreach assets and phase-1 launch plan
+- targeting docs, sample fulfillment workflow, social posts, and objection handling
 
 ## Run locally
 ```bash
