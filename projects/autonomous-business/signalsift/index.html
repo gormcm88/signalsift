@@ -7,13 +7,12 @@
   <style>
     :root {
       --bg: #f4f7fb;
-      --panel: rgba(255,255,255,0.78);
       --card: #ffffff;
       --text: #0f172a;
       --muted: #52607a;
       --line: #dbe3ef;
       --accent: #1d4ed8;
-      --accent-2: #0f172a;
+      --dark: #111827;
       --good: #0f766e;
       --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     }
@@ -58,23 +57,19 @@
       display: inline-block; padding: 14px 20px; border-radius: 14px; text-decoration: none; font-weight: 700;
       border: 1px solid transparent;
     }
-    .cta.primary { background: var(--accent-2); color: white; box-shadow: 0 14px 34px rgba(15,23,42,.16); }
+    .cta.primary { background: var(--dark); color: white; box-shadow: 0 14px 34px rgba(15,23,42,.16); }
     .cta.secondary { background: white; color: var(--text); border-color: var(--line); }
     .proof { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: 14px; }
-    .proof span { display: inline-flex; align-items: center; gap: 8px; }
     .mock {
       background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.86));
       border: 1px solid rgba(219,227,239,.9); border-radius: 24px; box-shadow: var(--shadow);
       padding: 18px;
     }
     .mock-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-    .mock-top strong { font-size: 15px; }
     .pill { padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
     .pill.good { color: var(--good); background: rgba(15,118,110,.10); }
     .pill.mid { color: #92400e; background: rgba(245,158,11,.14); }
-    .signal-card {
-      background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-top: 12px;
-    }
+    .signal-card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-top: 12px; }
     .signal-card h3 { margin: 0 0 8px; font-size: 18px; }
     .signal-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
     .signal-meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 12px; font-size: 12px; color: var(--muted); }
@@ -84,7 +79,7 @@
     .section-head p { color: var(--muted); font-size: 18px; line-height: 1.65; margin: 0; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
     .card {
-      background: rgba(255,255,255,.88); border: 1px solid rgba(219,227,239,.95); border-radius: 20px;
+      background: rgba(255,255,255,.9); border: 1px solid rgba(219,227,239,.95); border-radius: 20px;
       padding: 22px; box-shadow: 0 12px 30px rgba(15,23,42,.04);
     }
     .card h3 { margin: 0 0 10px; font-size: 18px; }
@@ -93,7 +88,6 @@
     .quote { font-size: 18px; color: var(--text); line-height: 1.7; }
     .pricing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .price { font-size: 42px; font-weight: 800; letter-spacing: -.04em; }
-    .muted { color: var(--muted); }
     ul { margin: 0; padding-left: 18px; }
     .footer-cta {
       margin-top: 72px; background: linear-gradient(135deg, #0f172a, #1e293b); color: white;
@@ -126,22 +120,22 @@
       <div>
         <div class="eyebrow">Prospect intelligence for agencies</div>
         <h1>Know when a prospect gives you a real reason to reach out.</h1>
-        <p class="sub">SignalSift monitors websites and public business signals so small agencies can spot offer changes, expansion, hiring, and reputation issues before competitors do — then turn them into stronger outreach.</p>
+        <p class="sub">Use SignalSift to spot offer changes, expansion signals, hiring activity, and reputation issues before your competitors do — then turn those changes into stronger outreach for your agency.</p>
         <div class="cta-row">
-          <a class="cta primary" href="./pages/for-agencies.html">See agency version</a>
+          <a class="cta primary" href="./request-sample.html">Request a free signal sample</a>
           <a class="cta secondary" href="./prototype.html">View product demo</a>
-          <a class="cta secondary" href="./dashboard.html">Open dashboard</a>
+          <a class="cta secondary" href="./pages/for-agencies.html">See agency page</a>
         </div>
         <div class="proof">
-          <span>✓ Built for SEO, paid media, CRO, web, and lead-gen agencies</span>
-          <span>✓ Less random outbound</span>
-          <span>✓ More credible reasons to contact prospects</span>
+          <span>✓ Best fit for SEO, paid media, CRO, web, and lead-gen agencies</span>
+          <span>✓ Replace random outbound with timely outreach</span>
+          <span>✓ Give your team more credible reasons to contact prospects</span>
         </div>
       </div>
 
       <div class="mock">
         <div class="mock-top">
-          <strong>Today’s highest-signal account changes</strong>
+          <strong>Example agency-ready signals</strong>
           <span class="pill good">demo data</span>
         </div>
 
@@ -171,45 +165,45 @@
 
     <section class="section">
       <div class="section-head">
-        <h2>Who this is for</h2>
-        <p>SignalSift should speak to one buyer first. Right now, that buyer is the agency owner or operator who sells growth services to SMBs and needs better outreach timing than “just checking Apollo again.”</p>
+        <h2>Built for agencies that sell growth services to SMBs</h2>
+        <p>If your agency sells SEO, paid media, web, CRO, or lead generation, SignalSift helps you reach out when a prospect actually changed something that matters — not just because they matched a list.</p>
       </div>
       <div class="grid">
         <div class="card">
-          <h3>Best-fit agencies</h3>
+          <h3>Best fit for your agency if you sell</h3>
           <ul>
-            <li>SEO agencies</li>
-            <li>Lead-gen agencies</li>
-            <li>Paid media shops</li>
-            <li>Web / CRO agencies</li>
+            <li>SEO services</li>
+            <li>Lead generation</li>
+            <li>Paid media</li>
+            <li>Web design or CRO</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Why they buy</h3>
+          <h3>Why agencies pay for this</h3>
           <ul>
             <li>Better timing for outbound</li>
-            <li>Clearer reasons to reach out</li>
+            <li>Clearer reasons to contact prospects</li>
             <li>Reusable across niches and clients</li>
-            <li>More concrete prospect research without manual digging</li>
+            <li>More concrete research without manual digging</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Core promise</h3>
-          <p>Less blind prospecting. More “they just changed something important, so now I have a credible angle.”</p>
+          <h3>What you get</h3>
+          <p>Fewer blind outreach attempts. More moments where you can say, “they just changed something important, so now we have a credible reason to contact them.”</p>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>What SignalSift catches</h2>
-        <p>The point is not “more data.” It’s noticing business change that suggests urgency, growth, or a new opening for an agency pitch.</p>
+        <h2>What you can catch before other agencies do</h2>
+        <p>You do not need more raw data. You need to notice business changes that suggest urgency, growth, or a better opening for your pitch.</p>
       </div>
       <div class="grid">
         <div class="card"><h3>Offer and positioning changes</h3><p>New homepage language, new service lines, pricing pages, or repositioning.</p></div>
         <div class="card"><h3>Expansion signals</h3><p>New locations, service-area pages, hiring pages, or commercial service launches.</p></div>
         <div class="card"><h3>Reputation shifts</h3><p>Review drops or spikes that create urgency around conversion and reputation management.</p></div>
-        <div class="card"><h3>Agency-ready angles</h3><p>Signals are translated into a usable reason to contact a prospect — not just a raw diff.</p></div>
+        <div class="card"><h3>Agency-ready angles</h3><p>Signals are translated into a usable reason to contact a prospect, not just a raw diff.</p></div>
       </div>
     </section>
 
@@ -219,29 +213,29 @@
         <p class="quote">“This dental group changed its homepage to push emergency visits, added a new patient offer, and saw its review rating fall. That’s a live opening for CRO, review recovery, and local SEO.”</p>
       </div>
       <div class="card">
-        <h3>What that means in practice</h3>
-        <p>You are not emailing with generic “noticed your website” nonsense. You’re reaching out with a specific, timely observation that implies a business need.</p>
+        <h3>What that means for your outreach</h3>
+        <p>Instead of sending generic “noticed your website” emails, you can reach out with a specific, timely observation that points to a real business need.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>Pricing hypothesis</h2>
-        <p>Still a hypothesis, but it should map to agency economics and be cheap enough to test without a committee meeting.</p>
+        <h2>Simple pricing your agency can test quickly</h2>
+        <p>The goal is to keep pricing low enough to try without friction, but high enough to reflect real value if SignalSift helps your team book more conversations.</p>
       </div>
       <div class="pricing">
         <div class="card">
-          <div class="price">$49<span class="muted">/mo</span></div>
+          <div class="price">$49<span style="color: var(--muted);">/mo</span></div>
           <h3>Starter</h3>
           <p>25 tracked companies, daily alerts, basic signal summaries.</p>
         </div>
         <div class="card">
-          <div class="price">$149<span class="muted">/mo</span></div>
+          <div class="price">$149<span style="color: var(--muted);">/mo</span></div>
           <h3>Pro</h3>
           <p>100 tracked companies, richer summaries, better prioritization.</p>
         </div>
         <div class="card">
-          <div class="price">$399<span class="muted">/mo</span></div>
+          <div class="price">$399<span style="color: var(--muted);">/mo</span></div>
           <h3>Agency</h3>
           <p>500 tracked companies, multi-client workflows, reporting-oriented usage.</p>
         </div>
@@ -249,24 +243,13 @@
     </section>
 
     <section class="footer-cta">
-      <h2>Start using better prospect signals instead of guessing.</h2>
-      <p>If your agency relies on outbound, SignalSift is built to help you reach out with better timing, better context, and a more believable reason for the conversation.</p>
+      <h2>Want to see if this helps your agency?</h2>
+      <p>Send a few target companies and get a free sample of the kinds of signals and outreach angles SignalSift can surface for your team.</p>
       <div class="cta-row">
-        <a class="cta primary" href="./pages/for-agencies.html">Open agency page</a>
+        <a class="cta primary" href="./request-sample.html">Request a free signal sample</a>
         <a class="cta secondary" href="./watchlist.html">Open watchlist</a>
       </div>
     </section>
   </div>
 </body>
-</html>
-</html>
->
-  </div>
-</body>
-</html>
-   </section>
-  </div>
-</body>
-</html>
-/body>
 </html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Free Signal Sample — SignalSift</title>
+  <style>
+    body { margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif; background:#f4f7fb; color:#0f172a; }
+    .wrap { max-width:860px; margin:0 auto; padding:48px 20px 80px; }
+    .card { background:#fff; border:1px solid #dbe3ef; border-radius:22px; padding:28px; box-shadow:0 16px 38px rgba(15,23,42,.05); }
+    h1 { font-size:48px; line-height:1; margin:0 0 14px; letter-spacing:-.04em; }
+    p { color:#52607a; font-size:18px; line-height:1.7; }
+    label { display:block; margin:14px 0 6px; font-weight:700; }
+    input, textarea { width:100%; padding:12px 14px; font:inherit; border-radius:12px; border:1px solid #cbd5e1; }
+    textarea { min-height:140px; }
+    button { margin-top:18px; background:#111827; color:#fff; border:none; border-radius:12px; padding:14px 18px; font:inherit; font-weight:700; cursor:pointer; }
+    .note { margin-top:16px; padding:14px; border-radius:14px; background:#eff6ff; color:#1d4ed8; }
+    .small { font-size:14px; color:#64748b; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Request a free signal sample</h1>
+      <p>Send a few target companies and SignalSift will generate example signals and outreach angles for your agency. This phase is still manual behind the scenes — that’s fine. The goal is to see if the output is useful enough to justify a subscription.</p>
+      <form id="sample-form">
+        <label>Your name</label>
+        <input name="name" required />
+        <label>Email</label>
+        <input type="email" name="email" required />
+        <label>Agency name</label>
+        <input name="agency" required />
+        <label>What do you sell?</label>
+        <input name="service" placeholder="SEO, paid media, web design, CRO..." required />
+        <label>Target companies (URLs or names)</label>
+        <textarea name="targets" placeholder="example.com&#10;brightpathdental.com&#10;northstarhvac.com" required></textarea>
+        <button type="submit">Save sample request</button>
+      </form>
+      <div class="note" id="note" hidden></div>
+      <p class="small">Current MVP behavior: requests are saved in your browser locally. Next step is wiring this to a real inbox or backend.</p>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('sample-form');
+    const note = document.getElementById('note');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const existing = JSON.parse(localStorage.getItem('signalsift-sample-requests') || '[]');
+      existing.push({ ...data, createdAt: new Date().toISOString() });
+      localStorage.setItem('signalsift-sample-requests', JSON.stringify(existing));
+      note.hidden = false;
+      note.textContent = `Saved sample request for ${data.agency}. Next step: wire this to a real inbox and fulfill the sample manually.`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>

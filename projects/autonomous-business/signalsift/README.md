@@ -37,7 +37,9 @@ Working local prototype with:
 - local dashboard
 - browser-side editable watchlist
 - redesigned homepage focused on agencies as the first ICP
+- free signal sample request page and clearer conversion path
 - niche landing pages for early GTM
+- outreach assets and phase-1 launch plan
 
 ## Run locally
 ```bash
