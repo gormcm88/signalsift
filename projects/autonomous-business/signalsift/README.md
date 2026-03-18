@@ -42,6 +42,7 @@ Working local prototype with:
 - niche landing pages for early GTM
 - outreach assets and phase-1 launch plan
 - targeting docs, sample fulfillment workflow, social posts, and objection handling
+- first cold-email prospect batch, campaign plan, list sourcing plan, and sequence docs
 
 ## Run locally
 ```bash
