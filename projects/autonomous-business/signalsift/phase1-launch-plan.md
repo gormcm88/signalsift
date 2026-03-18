@@ -23,7 +23,7 @@ Free signal sample for 5-10 prospect accounts.
 - objections
 
 ## Immediate next improvements
-- wire sample requests to a real inbox/backend
 - create a target-account sourcing list
 - create 3 sample outputs by niche
 - refine outreach copy after first responses
+- move from email intake to a proper backend if response volume justifies it

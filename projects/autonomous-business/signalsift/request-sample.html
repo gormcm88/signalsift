@@ -34,10 +34,10 @@
         <input name="service" placeholder="SEO, paid media, web design, CRO..." required />
         <label>Target companies (URLs or names)</label>
         <textarea name="targets" placeholder="example.com&#10;brightpathdental.com&#10;northstarhvac.com" required></textarea>
-        <button type="submit">Save sample request</button>
+        <button type="submit">Draft email request</button>
       </form>
       <div class="note" id="note" hidden></div>
-      <p class="small">Current MVP behavior: requests are saved in your browser locally. Next step is wiring this to a real inbox or backend.</p>
+      <p class="small">Current behavior: submitting this form opens your email app and drafts a request to <strong>gormcm3@gmail.com</strong>. If no email app opens, send the details manually to that address.</p>
     </div>
   </div>
   <script>
@@ -46,12 +46,20 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = Object.fromEntries(new FormData(form).entries());
-      const existing = JSON.parse(localStorage.getItem('signalsift-sample-requests') || '[]');
-      existing.push({ ...data, createdAt: new Date().toISOString() });
-      localStorage.setItem('signalsift-sample-requests', JSON.stringify(existing));
+      const subject = encodeURIComponent(`SignalSift sample request from ${data.agency}`);
+      const body = encodeURIComponent(
+`Name: ${data.name}
+Email: ${data.email}
+Agency: ${data.agency}
+Service: ${data.service}
+
+Target companies:
+${data.targets}
+`
+      );
+      window.location.href = `mailto:gormcm3@gmail.com?subject=${subject}&body=${body}`;
       note.hidden = false;
-      note.textContent = `Saved sample request for ${data.agency}. Next step: wire this to a real inbox and fulfill the sample manually.`;
-      form.reset();
+      note.textContent = `Your email app should open a draft to gormcm3@gmail.com. If it doesn't, email the request details manually.`;
     });
   </script>
 </body>
