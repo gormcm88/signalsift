@@ -22,11 +22,11 @@ Why:
 2. **Founder-led direct demos**
    - short Loom-style walkthroughs once live deployment exists
 3. **Niche landing pages**
+   - SignalSift for agencies
    - SignalSift for SEO agencies
-   - SignalSift for recruiters
-   - SignalSift for fractional SDR teams
+   - SignalSift for paid media / web / CRO agencies
 4. **Communities**
-   - agency/freelancer/recruiter communities where operators care about prospecting leverage
+   - agency owner and operator communities where prospecting leverage matters
 
 ## Offer design
 - free sample alerts for 5-10 companies
@@ -54,6 +54,13 @@ Why:
 
 ## Biggest go-to-market risk
 If alerts are too generic, users won't pay.
+
+## Mitigation
+- start with one niche
+- make signals concrete and legible
+- show example outreach hooks, not just raw diffs
+t raw diffs
+rs won't pay.
 
 ## Mitigation
 - start with one niche

@@ -3,46 +3,259 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SignalSift</title>
+  <title>SignalSift — Prospect Signals for Agencies</title>
   <style>
-    body { font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
-    .wrap { max-width: 1000px; margin: 0 auto; padding: 48px 20px; }
-    h1 { font-size: 52px; line-height: 1.05; margin: 0 0 12px; }
-    h2 { font-size: 28px; margin-top: 42px; }
-    p, li { font-size: 18px; line-height: 1.6; }
-    .sub { color: #475569; max-width: 760px; }
-    .cta { display: inline-block; padding: 14px 20px; background: #111827; color: #fff; text-decoration: none; border-radius: 12px; margin-right: 12px; }
-    .cta.secondary { background: white; color: #111827; border: 1px solid #cbd5e1; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px; }
-    .badge { display: inline-block; padding: 6px 10px; background: #dbeafe; color: #1d4ed8; border-radius: 999px; font-size: 13px; font-weight: 700; }
+    :root {
+      --bg: #f4f7fb;
+      --panel: rgba(255,255,255,0.78);
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #52607a;
+      --line: #dbe3ef;
+      --accent: #1d4ed8;
+      --accent-2: #0f172a;
+      --good: #0f766e;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(15,118,110,.10), transparent 24%),
+        var(--bg);
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 32px 20px 88px; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 34px; padding: 14px 18px; border: 1px solid rgba(219,227,239,.85);
+      background: rgba(255,255,255,.72); backdrop-filter: blur(10px); border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(15,23,42,.05);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: -.02em; }
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center;
+      color: white; font-weight: 800; background: linear-gradient(135deg, #2563eb, #0f766e);
+      box-shadow: 0 10px 24px rgba(37,99,235,.25);
+    }
+    .nav-links { display: flex; gap: 18px; color: var(--muted); font-size: 14px; }
+    .hero {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center;
+      padding: 28px 0 36px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
+      background: rgba(37,99,235,.08); color: var(--accent); font-size: 13px; font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1 { font-size: clamp(44px, 6vw, 72px); line-height: .95; margin: 0 0 18px; letter-spacing: -0.05em; }
+    .sub { color: var(--muted); font-size: 20px; line-height: 1.65; max-width: 720px; margin: 0 0 22px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 18px; }
+    .cta {
+      display: inline-block; padding: 14px 20px; border-radius: 14px; text-decoration: none; font-weight: 700;
+      border: 1px solid transparent;
+    }
+    .cta.primary { background: var(--accent-2); color: white; box-shadow: 0 14px 34px rgba(15,23,42,.16); }
+    .cta.secondary { background: white; color: var(--text); border-color: var(--line); }
+    .proof { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: 14px; }
+    .proof span { display: inline-flex; align-items: center; gap: 8px; }
+    .mock {
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.86));
+      border: 1px solid rgba(219,227,239,.9); border-radius: 24px; box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .mock-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    .mock-top strong { font-size: 15px; }
+    .pill { padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .pill.good { color: var(--good); background: rgba(15,118,110,.10); }
+    .pill.mid { color: #92400e; background: rgba(245,158,11,.14); }
+    .signal-card {
+      background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-top: 12px;
+    }
+    .signal-card h3 { margin: 0 0 8px; font-size: 18px; }
+    .signal-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+    .signal-meta { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 12px; font-size: 12px; color: var(--muted); }
+    .section { margin-top: 70px; }
+    .section-head { max-width: 760px; margin-bottom: 22px; }
+    .section-head h2 { font-size: 36px; margin: 0 0 10px; letter-spacing: -0.03em; }
+    .section-head p { color: var(--muted); font-size: 18px; line-height: 1.65; margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .card {
+      background: rgba(255,255,255,.88); border: 1px solid rgba(219,227,239,.95); border-radius: 20px;
+      padding: 22px; box-shadow: 0 12px 30px rgba(15,23,42,.04);
+    }
+    .card h3 { margin: 0 0 10px; font-size: 18px; }
+    .card p, .card li { color: var(--muted); font-size: 16px; line-height: 1.65; }
+    .two-up { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .quote { font-size: 18px; color: var(--text); line-height: 1.7; }
+    .pricing { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .price { font-size: 42px; font-weight: 800; letter-spacing: -.04em; }
+    .muted { color: var(--muted); }
+    ul { margin: 0; padding-left: 18px; }
+    .footer-cta {
+      margin-top: 72px; background: linear-gradient(135deg, #0f172a, #1e293b); color: white;
+      border-radius: 28px; padding: 30px; box-shadow: 0 18px 50px rgba(15,23,42,.16);
+    }
+    .footer-cta p { color: rgba(255,255,255,.78); max-width: 680px; }
+    .footer-cta .cta.secondary { background: rgba(255,255,255,.08); color: white; border-color: rgba(255,255,255,.16); }
+    @media (max-width: 920px) {
+      .hero, .two-up, .pricing { grid-template-columns: 1fr; }
+      .nav { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .nav-links { flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <span class="badge">Autonomous B2B signal monitor</span>
-    <h1>Know which companies just became good prospects.</h1>
-    <p class="sub">SignalSift monitors websites and public signals so agencies, recruiters, consultants, and outbound teams know when a company is hiring, changing offers, expanding, or vulnerable to a better pitch.</p>
-    <p>
-      <a class="cta" href="./prototype.html">Open prototype</a>
-      <a class="cta secondary" href="./watchlist.html">Edit watchlist</a>
-      <a class="cta secondary" href="./dashboard.html">Open dashboard</a>
-    </p>
-
-    <h2>Signals we track</h2>
-    <div class="grid">
-      <div class="card"><strong>Hiring changes</strong><p>Spot companies ramping sales, marketing, ops, or recruiting roles.</p></div>
-      <div class="card"><strong>Website changes</strong><p>Catch new headlines, offers, positioning, service pages, or location pages.</p></div>
-      <div class="card"><strong>Review swings</strong><p>Notice review spikes, drops, or reputation problems that create urgency.</p></div>
-      <div class="card"><strong>Sales angles</strong><p>Convert raw changes into concise outreach hooks and client alerts.</p></div>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>SignalSift</div>
+      </div>
+      <div class="nav-links">
+        <span>For agencies</span>
+        <span>Signal examples</span>
+        <span>Pricing</span>
+      </div>
     </div>
 
-    <h2>Pricing hypothesis</h2>
-    <div class="grid">
-      <div class="card"><strong>$49/mo</strong><p>25 tracked companies, daily alerts</p></div>
-      <div class="card"><strong>$149/mo</strong><p>100 tracked companies, enriched summaries</p></div>
-      <div class="card"><strong>$399/mo</strong><p>500 tracked companies, agency workspace</p></div>
-    </div>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Prospect intelligence for agencies</div>
+        <h1>Know when a prospect gives you a real reason to reach out.</h1>
+        <p class="sub">SignalSift monitors websites and public business signals so small agencies can spot offer changes, expansion, hiring, and reputation issues before competitors do — then turn them into stronger outreach.</p>
+        <div class="cta-row">
+          <a class="cta primary" href="./pages/for-agencies.html">See agency version</a>
+          <a class="cta secondary" href="./prototype.html">View product demo</a>
+          <a class="cta secondary" href="./dashboard.html">Open dashboard</a>
+        </div>
+        <div class="proof">
+          <span>✓ Built for SEO, paid media, CRO, web, and lead-gen agencies</span>
+          <span>✓ Less random outbound</span>
+          <span>✓ More credible reasons to contact prospects</span>
+        </div>
+      </div>
+
+      <div class="mock">
+        <div class="mock-top">
+          <strong>Today’s highest-signal account changes</strong>
+          <span class="pill good">demo data</span>
+        </div>
+
+        <div class="signal-card">
+          <div class="pill mid">Medium signal</div>
+          <h3>BrightPath Dental</h3>
+          <div class="signal-meta">
+            <span>Homepage repositioned</span>
+            <span>Review rating slipped</span>
+            <span>New patient offer visible</span>
+          </div>
+          <p><strong>Suggested angle:</strong> Their messaging shifted toward emergency care while reputation softened. Good opening for CRO, review recovery, or local SEO help.</p>
+        </div>
+
+        <div class="signal-card">
+          <div class="pill good">High signal</div>
+          <h3>Northstar HVAC</h3>
+          <div class="signal-meta">
+            <span>Added commercial service messaging</span>
+            <span>Careers page updated</span>
+            <span>More location coverage</span>
+          </div>
+          <p><strong>Suggested angle:</strong> This looks like expansion. Useful timing for outbound around paid search, service-area SEO, or lead intake optimization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Who this is for</h2>
+        <p>SignalSift should speak to one buyer first. Right now, that buyer is the agency owner or operator who sells growth services to SMBs and needs better outreach timing than “just checking Apollo again.”</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Best-fit agencies</h3>
+          <ul>
+            <li>SEO agencies</li>
+            <li>Lead-gen agencies</li>
+            <li>Paid media shops</li>
+            <li>Web / CRO agencies</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why they buy</h3>
+          <ul>
+            <li>Better timing for outbound</li>
+            <li>Clearer reasons to reach out</li>
+            <li>Reusable across niches and clients</li>
+            <li>More concrete prospect research without manual digging</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Core promise</h3>
+          <p>Less blind prospecting. More “they just changed something important, so now I have a credible angle.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>What SignalSift catches</h2>
+        <p>The point is not “more data.” It’s noticing business change that suggests urgency, growth, or a new opening for an agency pitch.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Offer and positioning changes</h3><p>New homepage language, new service lines, pricing pages, or repositioning.</p></div>
+        <div class="card"><h3>Expansion signals</h3><p>New locations, service-area pages, hiring pages, or commercial service launches.</p></div>
+        <div class="card"><h3>Reputation shifts</h3><p>Review drops or spikes that create urgency around conversion and reputation management.</p></div>
+        <div class="card"><h3>Agency-ready angles</h3><p>Signals are translated into a usable reason to contact a prospect — not just a raw diff.</p></div>
+      </div>
+    </section>
+
+    <section class="section two-up">
+      <div class="card">
+        <h3>Example signal</h3>
+        <p class="quote">“This dental group changed its homepage to push emergency visits, added a new patient offer, and saw its review rating fall. That’s a live opening for CRO, review recovery, and local SEO.”</p>
+      </div>
+      <div class="card">
+        <h3>What that means in practice</h3>
+        <p>You are not emailing with generic “noticed your website” nonsense. You’re reaching out with a specific, timely observation that implies a business need.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Pricing hypothesis</h2>
+        <p>Still a hypothesis, but it should map to agency economics and be cheap enough to test without a committee meeting.</p>
+      </div>
+      <div class="pricing">
+        <div class="card">
+          <div class="price">$49<span class="muted">/mo</span></div>
+          <h3>Starter</h3>
+          <p>25 tracked companies, daily alerts, basic signal summaries.</p>
+        </div>
+        <div class="card">
+          <div class="price">$149<span class="muted">/mo</span></div>
+          <h3>Pro</h3>
+          <p>100 tracked companies, richer summaries, better prioritization.</p>
+        </div>
+        <div class="card">
+          <div class="price">$399<span class="muted">/mo</span></div>
+          <h3>Agency</h3>
+          <p>500 tracked companies, multi-client workflows, reporting-oriented usage.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      <h2>Start with agencies. Earn the right to expand later.</h2>
+      <p>The product gets stronger if the first buyer is specific. That means sharper design, sharper copy, and sharper outreach. Everything else can come after we prove someone actually wants this.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="./pages/for-agencies.html">Open agency page</a>
+        <a class="cta secondary" href="./watchlist.html">Open watchlist</a>
+      </div>
+    </section>
   </div>
 </body>
 </html>

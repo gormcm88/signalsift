@@ -36,6 +36,7 @@ Working local prototype with:
 - alert generation
 - local dashboard
 - browser-side editable watchlist
+- redesigned homepage focused on agencies as the first ICP
 - niche landing pages for early GTM
 
 ## Run locally
