@@ -377,6 +377,30 @@
         `Timing Constraints: ${data.timing_constraints || ''}`,
         `Seller Positioning Notes: ${data.seller_positioning || ''}`,
         `Seller Comp View: ${data.seller_comp_view || ''}`,
+        `Final Notes: ${data.final_notes || ''}`,
+        `Photo / Document Notes: ${data.photo_doc_notes || ''}`
+      ];
+      const subject = encodeURIComponent(`Confidential property profile: ${data.address || 'Luxury listing intake'}`);
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:chris@gormanresidential.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
+
+      window.location.href = `mailto:chris@gormanresidential.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
+ });
+  </script>
+</body>
+</html>
+_timing || ''}`,
+        `Timing Constraints: ${data.timing_constraints || ''}`,
+        `Seller Positioning Notes: ${data.seller_positioning || ''}`,
+        `Seller Comp View: ${data.seller_comp_view || ''}`,
         `Final Notes: ${data.final_notes || ''}`
       ];
       const subject = encodeURIComponent(`Confidential property profile: ${data.address || 'Luxury listing intake'}`);
