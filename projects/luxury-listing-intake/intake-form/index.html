@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Property Profile | Gorman Residential</title>
+  <title>Confidential Property Profile | Gorman Residential</title>
   <style>
     :root {
       --bg: #f7f5f1;
@@ -26,7 +26,44 @@
         radial-gradient(circle at top right, rgba(95,71,40,.08), transparent 26%),
         var(--bg);
     }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 36px 20px 80px; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 80px; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(230,221,210,.95);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(40,26,12,.05);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+      box-shadow: 0 10px 24px rgba(95,71,40,.22);
+    }
+    .brand-copy strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 13px;
+    }
     .hero {
       background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
       border: 1px solid rgba(230,221,210,.95);
@@ -58,7 +95,7 @@
       font-size: 19px;
       line-height: 1.75;
       color: var(--muted);
-      max-width: 820px;
+      max-width: 850px;
       margin: 0;
     }
     .grid { display: grid; grid-template-columns: 1fr 320px; gap: 22px; align-items: start; }
@@ -137,15 +174,27 @@
     @media (max-width: 900px) {
       .grid, .two, .three { grid-template-columns: 1fr; }
       .hero, .panel, .section { padding: 22px; }
+      .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark">GR</div>
+        <div class="brand-copy">
+          <strong>Gorman Residential</strong>
+          <span>Private seller intake | Luxury listing preparation</span>
+        </div>
+      </div>
+      <div class="small">Confidential seller-facing form</div>
+    </div>
+
     <section class="hero">
       <div class="eyebrow">Confidential property profile</div>
       <h1>Help us present your home with complete accuracy and exceptional detail.</h1>
-      <p class="sub">Thank you for taking a few minutes to complete this property profile. Public records and online data often miss the very improvements and details that matter most in the luxury market. Your responses will help us price, position, and present your home at the highest level.</p>
+      <p class="sub">Thank you for taking a few minutes to complete this property profile. Public records and online data often miss the very improvements and details that matter most in the luxury market. Your responses will help Gorman Residential price, position, and present your home at the highest level.</p>
     </section>
 
     <div class="grid">
@@ -155,8 +204,12 @@
             <h2>1. Property basics</h2>
             <p class="section-intro">Start with the essentials so we can make sure every core fact is correct before we begin valuation.</p>
             <div class="two">
-              <div class="field"><label>Property address</label><input name="address" /></div>
-              <div class="field"><label>Best seller contact name</label><input name="seller_name" /></div>
+              <div class="field"><label>Property address</label><input name="address" required /></div>
+              <div class="field"><label>Best seller contact name</label><input name="seller_name" required /></div>
+            </div>
+            <div class="two">
+              <div class="field"><label>Best email</label><input name="seller_email" type="email" required /></div>
+              <div class="field"><label>Best phone</label><input name="seller_phone" /></div>
             </div>
             <div class="three">
               <div class="field"><label>Bedrooms</label><input name="bedrooms" /></div>
@@ -254,9 +307,9 @@
           <div class="submit-bar">
             <div>
               <div style="font-weight:700;">Thank you.</div>
-              <div class="small">This form can be exported into a polished seller brief for pricing and presentation prep.</div>
+              <div class="small">Submitting this form drafts an email to Chris at Gorman Residential with your property profile.</div>
             </div>
-            <button type="submit">Save property profile</button>
+            <button type="submit">Submit property profile</button>
           </div>
         </form>
       </main>
@@ -270,7 +323,7 @@
           <li>finish quality and special features</li>
           <li>setting, privacy, and community advantages</li>
         </ul>
-        <p>Once this is complete, we’ll use it to build:</p>
+        <p>Once this is complete, Gorman Residential will use it to build:</p>
         <ul>
           <li>a value assessment</li>
           <li>a comparative market analysis</li>
@@ -284,10 +337,52 @@
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = Object.fromEntries(new FormData(form).entries());
-      const existing = JSON.parse(localStorage.getItem('luxury-listing-intake') || '[]');
-      existing.push({ ...data, createdAt: new Date().toISOString() });
-      localStorage.setItem('luxury-listing-intake', JSON.stringify(existing));
-      alert('Property profile saved locally in this browser. Next step: wire this to a real intake destination or export format.');
+      const lines = [
+        `Seller Name: ${data.seller_name || ''}`,
+        `Seller Email: ${data.seller_email || ''}`,
+        `Seller Phone: ${data.seller_phone || ''}`,
+        `Property Address: ${data.address || ''}`,
+        `Bedrooms: ${data.bedrooms || ''}`,
+        `Full Baths: ${data.full_baths || ''}`,
+        `Half Baths: ${data.half_baths || ''}`,
+        `Heated Sq Ft: ${data.sqft_heated || ''}`,
+        `Lot Size: ${data.lot_size || ''}`,
+        `Year Built: ${data.year_built || ''}`,
+        '',
+        `Purchase Date: ${data.purchase_date || ''}`,
+        `Purchased New: ${data.purchased_new || ''}`,
+        `Builder/Community: ${data.builder_name || ''}`,
+        `Builder Options / Lot Premiums: ${data.builder_options || ''}`,
+        '',
+        `Upgrade Details: ${data.upgrade_details || ''}`,
+        `Interior Best Features: ${data.interior_best_features || ''}`,
+        `Architectural Details: ${data.architectural_details || ''}`,
+        `Kitchen Finish Notes: ${data.kitchen_finish_notes || ''}`,
+        `Primary Suite: ${data.primary_suite || ''}`,
+        `Special Rooms: ${data.special_rooms || ''}`,
+        '',
+        `Lot Advantages: ${data.lot_advantages || ''}`,
+        `Outdoor Features: ${data.outdoor_features || ''}`,
+        `Hidden Setting Value: ${data.setting_hidden_value || ''}`,
+        '',
+        `HVAC Info: ${data.hvac_info || ''}`,
+        `Major Systems: ${data.major_systems || ''}`,
+        `Smart Features: ${data.smart_features || ''}`,
+        `Disclosure Notes: ${data.disclosure_notes || ''}`,
+        '',
+        `Community Lifestyle: ${data.community_lifestyle || ''}`,
+        `HOA Amenities: ${data.hoa_amenities || ''}`,
+        `Nearby Draws: ${data.nearby_draws || ''}`,
+        '',
+        `Listing Timing: ${data.listing_timing || ''}`,
+        `Timing Constraints: ${data.timing_constraints || ''}`,
+        `Seller Positioning Notes: ${data.seller_positioning || ''}`,
+        `Seller Comp View: ${data.seller_comp_view || ''}`,
+        `Final Notes: ${data.final_notes || ''}`
+      ];
+      const subject = encodeURIComponent(`Confidential property profile: ${data.address || 'Luxury listing intake'}`);
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:chris@gormanresidential.com?subject=${subject}&body=${body}`;
     });
   </script>
 </body>

@@ -1,7 +1,7 @@
 # Next steps for this listing-prep workflow
 
 ## Step 1
-Finalize the intake form design and determine how the seller will receive/submit it.
+Finalize the intake form design and deliver it as a private web link branded to Gorman Residential, with responses routed to chris@gormanresidential.com.
 
 ## Step 2
 Collect property-specific inputs:
