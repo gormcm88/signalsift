@@ -6,77 +6,67 @@
   <title>Confidential Property Profile | Gorman Residential</title>
   <style>
     :root {
-      --bg: #f7f5f1;
-      --panel: rgba(255,255,255,0.82);
-      --card: #ffffff;
-      --text: #1d1a17;
-      --muted: #6b6259;
-      --line: #e6ddd2;
-      --accent: #8a6a3f;
-      --accent-dark: #5f4728;
-      --shadow: 0 20px 50px rgba(40, 26, 12, 0.08);
+      --bg: #0b0b0b;
+      --bg-soft: #141414;
+      --panel: rgba(18,18,18,0.94);
+      --card: #121212;
+      --text: #f4d37d;
+      --text-soft: #f7edd2;
+      --muted: #d6bc7a;
+      --line: rgba(244, 211, 125, 0.18);
+      --accent: #f4d37d;
+      --accent-dark: #b88b2a;
+      --input-bg: #181818;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
+      color: var(--text-soft);
       background:
-        radial-gradient(circle at top left, rgba(138,106,63,.12), transparent 24%),
-        radial-gradient(circle at top right, rgba(95,71,40,.08), transparent 26%),
-        var(--bg);
+        radial-gradient(circle at top left, rgba(244,211,125,.10), transparent 22%),
+        radial-gradient(circle at top right, rgba(184,139,42,.10), transparent 20%),
+        linear-gradient(180deg, #050505, #101010 38%, #0b0b0b 100%);
     }
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 20px 80px; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 34px 20px 80px; }
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 18px;
       margin-bottom: 18px;
-      padding: 14px 18px;
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(230,221,210,.95);
-      border-radius: 18px;
-      box-shadow: 0 12px 30px rgba(40,26,12,.05);
+      padding: 16px 18px;
+      background: rgba(17,17,17,.9);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
     }
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
-    .mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--accent-dark), var(--accent));
-      box-shadow: 0 10px 24px rgba(95,71,40,.22);
-    }
-    .brand-copy strong {
+    .brand img {
+      width: 210px;
+      max-width: 100%;
+      height: auto;
       display: block;
-      font-size: 14px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .brand-copy span {
-      color: var(--muted);
-      font-size: 13px;
     }
     .hero {
-      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
-      border: 1px solid rgba(230,221,210,.95);
-      border-radius: 28px;
-      padding: 36px;
+      background: linear-gradient(180deg, rgba(18,18,18,.96), rgba(14,14,14,.92));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 40px;
       box-shadow: var(--shadow);
       margin-bottom: 26px;
     }
     .eyebrow {
       display: inline-block;
       padding: 8px 12px;
-      background: rgba(138,106,63,.10);
-      color: var(--accent-dark);
+      background: rgba(244,211,125,.10);
+      color: var(--accent);
+      border: 1px solid rgba(244,211,125,.18);
       border-radius: 999px;
       font-size: 12px;
       letter-spacing: .08em;
@@ -86,23 +76,24 @@
     }
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(40px, 6vw, 64px);
+      font-size: clamp(40px, 6vw, 66px);
       line-height: .98;
       margin: 0 0 16px;
       letter-spacing: -.03em;
+      color: var(--accent);
     }
     .sub {
       font-size: 19px;
-      line-height: 1.75;
-      color: var(--muted);
-      max-width: 850px;
+      line-height: 1.8;
+      color: var(--text-soft);
+      max-width: 860px;
       margin: 0;
     }
     .grid { display: grid; grid-template-columns: 1fr 320px; gap: 22px; align-items: start; }
     .panel {
       background: var(--panel);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(230,221,210,.95);
+      border: 1px solid var(--line);
       border-radius: 24px;
       box-shadow: var(--shadow);
       padding: 26px;
@@ -111,27 +102,36 @@
       font-family: Georgia, "Times New Roman", serif;
       letter-spacing: -.02em;
       margin: 0 0 10px;
+      color: var(--accent);
     }
     .sidebar p, .sidebar li, .section p, .section li, label, input, textarea, select {
       font-size: 15px;
       line-height: 1.7;
     }
-    .section { margin-bottom: 18px; padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: 22px; }
+    .section {
+      margin-bottom: 18px;
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.2);
+    }
     .section h2 { font-size: 30px; }
-    .section-intro { color: var(--muted); margin: 0 0 16px; }
+    .section-intro { color: var(--text-soft); opacity: .92; margin: 0 0 16px; }
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    label { display: block; font-weight: 700; margin-bottom: 6px; }
+    label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--accent); }
     .field { margin-bottom: 14px; }
     input, select, textarea {
       width: 100%;
-      border: 1px solid #d9cec0;
+      border: 1px solid rgba(244,211,125,.22);
       border-radius: 14px;
       padding: 13px 14px;
-      background: #fffdfa;
-      color: var(--text);
+      background: var(--input-bg);
+      color: var(--text-soft);
       font: inherit;
     }
+    input::placeholder, textarea::placeholder { color: rgba(247,237,210,.45); }
     textarea { min-height: 120px; resize: vertical; }
     .checklist {
       display: grid;
@@ -144,8 +144,9 @@
       align-items: flex-start;
       gap: 10px;
       font-weight: 500;
+      color: var(--text-soft);
     }
-    .checklist input { width: auto; margin-top: 5px; }
+    .checklist input { width: auto; margin-top: 5px; accent-color: var(--accent-dark); }
     .submit-bar {
       position: sticky;
       bottom: 14px;
@@ -155,26 +156,28 @@
       align-items: center;
       margin-top: 18px;
       padding: 16px 18px;
-      background: rgba(255,255,255,.92);
+      background: rgba(18,18,18,.95);
       border: 1px solid var(--line);
       border-radius: 18px;
-      box-shadow: 0 16px 35px rgba(40,26,12,.08);
+      box-shadow: 0 16px 35px rgba(0,0,0,.3);
     }
     button {
       border: none;
       border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent-dark), var(--accent));
-      color: white;
+      background: linear-gradient(135deg, #c59532, #f4d37d);
+      color: #111;
       font: inherit;
-      font-weight: 700;
+      font-weight: 800;
       padding: 14px 20px;
       cursor: pointer;
+      box-shadow: 0 12px 28px rgba(196,149,50,.22);
     }
     .small { color: var(--muted); font-size: 13px; }
     @media (max-width: 900px) {
       .grid, .two, .three { grid-template-columns: 1fr; }
       .hero, .panel, .section { padding: 22px; }
-      .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+      .brand img { width: 180px; }
     }
   </style>
 </head>
@@ -182,13 +185,9 @@
   <div class="wrap">
     <div class="topbar">
       <div class="brand">
-        <div class="mark">GR</div>
-        <div class="brand-copy">
-          <strong>Gorman Residential</strong>
-          <span>Private seller intake | Luxury listing preparation</span>
-        </div>
+        <img src="./assets/gorman-residential-logo.png" alt="Gorman Residential logo" />
       </div>
-      <div class="small">Confidential seller-facing form</div>
+      <div class="small">Private seller intake | Confidential property profile</div>
     </div>
 
     <section class="hero">
@@ -306,7 +305,7 @@
 
           <div class="submit-bar">
             <div>
-              <div style="font-weight:700;">Thank you.</div>
+              <div style="font-weight:700; color: var(--accent);">Thank you.</div>
               <div class="small">Submitting this form drafts an email to Chris at Gorman Residential with your property profile.</div>
             </div>
             <button type="submit">Submit property profile</button>
