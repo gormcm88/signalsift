@@ -8,13 +8,13 @@
 ## Delivery method
 - private web link
 - seller completes in browser
-- submission currently drafts an email to chris@gormanresidential.com
+- submission now posts to FormSubmit and routes to chris@gormanresidential.com
 
-## Current limitation
-This is currently mailto-based, which is acceptable for immediate use but not ideal long-term.
+## Important note
+- FormSubmit typically sends a first-use activation/verification email to the destination inbox.
+- Chris may need to click the activation link once before submissions start forwarding normally.
 
-## Better future version
-- real hosted form backend
-- branded confirmation screen
-- optional document/photo upload
-- seller can save progress or return later
+## Future improvements
+- true file upload support
+- branded confirmation flow with upload handling
+- optional save-and-return later behavior

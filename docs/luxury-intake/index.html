@@ -41,12 +41,7 @@
       border-radius: 20px;
       box-shadow: 0 12px 30px rgba(0,0,0,.25);
     }
-    .brand img {
-      width: 210px;
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    .brand img { width: 210px; max-width: 100%; height: auto; display: block; }
     .hero {
       background: linear-gradient(180deg, rgba(18,18,18,.96), rgba(14,14,14,.92));
       border: 1px solid var(--line);
@@ -76,99 +71,30 @@
       letter-spacing: -.03em;
       color: var(--accent);
     }
-    .sub {
-      font-size: 19px;
-      line-height: 1.8;
-      color: var(--text-soft);
-      max-width: 860px;
-      margin: 0;
-    }
+    .sub { font-size: 19px; line-height: 1.8; color: var(--text-soft); max-width: 860px; margin: 0; }
     .small { color: var(--muted); font-size: 13px; }
-    .section {
-      margin-bottom: 18px;
-      padding: 24px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      box-shadow: 0 12px 28px rgba(0,0,0,.2);
-    }
-    .section h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      letter-spacing: -.02em;
-      margin: 0 0 10px;
-      color: var(--accent);
-      font-size: 30px;
-    }
+    .section { margin-bottom: 18px; padding: 24px; background: var(--card); border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 12px 28px rgba(0,0,0,.2); }
+    .section h2 { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.02em; margin: 0 0 10px; color: var(--accent); font-size: 30px; }
     .section-intro { color: var(--text-soft); opacity: .92; margin: 0 0 16px; }
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     label { display: block; font-weight: 700; margin-bottom: 6px; color: var(--accent); }
     .field { margin-bottom: 14px; }
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid rgba(244,211,125,.22);
-      border-radius: 14px;
-      padding: 13px 14px;
-      background: var(--input-bg);
-      color: var(--text-soft);
-      font: inherit;
-    }
+    input, select, textarea { width: 100%; border: 1px solid rgba(244,211,125,.22); border-radius: 14px; padding: 13px 14px; background: var(--input-bg); color: var(--text-soft); font: inherit; }
     input::placeholder, textarea::placeholder { color: rgba(247,237,210,.45); }
     textarea { min-height: 120px; resize: vertical; }
-    .checklist {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px 18px;
-      margin-top: 8px;
-    }
-    .checklist label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-weight: 500;
-      color: var(--text-soft);
-    }
+    .checklist { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 18px; margin-top: 8px; }
+    .checklist label { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; color: var(--text-soft); }
     .checklist input { width: auto; margin-top: 5px; accent-color: var(--accent-dark); }
-    .submit-bar {
-      position: sticky;
-      bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: center;
-      margin-top: 18px;
-      padding: 16px 18px;
-      background: rgba(18,18,18,.95);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 16px 35px rgba(0,0,0,.3);
-    }
-    button {
-      border: none;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #c59532, #f4d37d);
-      color: #111;
-      font: inherit;
-      font-weight: 800;
-      padding: 14px 20px;
-      cursor: pointer;
-      box-shadow: 0 12px 28px rgba(196,149,50,.22);
-    }
-    @media (max-width: 900px) {
-      .two, .three { grid-template-columns: 1fr; }
-      .hero, .section { padding: 22px; }
-      .topbar { flex-direction: column; align-items: flex-start; }
-      .brand img { width: 180px; }
-      .submit-bar { flex-direction: column; align-items: flex-start; }
-    }
+    .submit-bar { position: sticky; bottom: 14px; display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-top: 18px; padding: 16px 18px; background: rgba(18,18,18,.95); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 16px 35px rgba(0,0,0,.3); }
+    button { border: none; border-radius: 14px; background: linear-gradient(135deg, #c59532, #f4d37d); color: #111; font: inherit; font-weight: 800; padding: 14px 20px; cursor: pointer; box-shadow: 0 12px 28px rgba(196,149,50,.22); }
+    @media (max-width: 900px) { .two, .three { grid-template-columns: 1fr; } .hero, .section { padding: 22px; } .topbar { flex-direction: column; align-items: flex-start; } .brand img { width: 180px; } .submit-bar { flex-direction: column; align-items: flex-start; } }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="brand">
-        <img src="./assets/gorman-residential-logo.png" alt="Gorman Residential logo" />
-      </div>
+      <div class="brand"><img src="./assets/gorman-residential-logo.png" alt="Gorman Residential logo" /></div>
       <div class="small">Private seller intake | Confidential property profile</div>
     </div>
 
@@ -180,27 +106,33 @@
     </section>
 
     <main>
-      <form id="luxury-intake-form">
+      <form action="https://formsubmit.co/chris@gormanresidential.com" method="POST">
+        <input type="hidden" name="_subject" value="New confidential property profile submission" />
+        <input type="hidden" name="_next" value="https://gormcm88.github.io/signalsift/luxury-intake/thank-you.html" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_replyto" value="seller_email" />
+
         <section class="section">
           <h2>1. Property basics</h2>
           <p class="section-intro">Start with the essentials so we can make sure every core fact is correct before we begin valuation.</p>
           <div class="two">
-            <div class="field"><label>Property address</label><input name="address" required /></div>
-            <div class="field"><label>Best seller contact name</label><input name="seller_name" required /></div>
+            <div class="field"><label>Property address</label><input name="Property address" required /></div>
+            <div class="field"><label>Best seller contact name</label><input name="Seller name" required /></div>
           </div>
           <div class="two">
             <div class="field"><label>Best email</label><input name="seller_email" type="email" required /></div>
-            <div class="field"><label>Best phone</label><input name="seller_phone" /></div>
+            <div class="field"><label>Best phone</label><input name="Seller phone" /></div>
           </div>
           <div class="three">
-            <div class="field"><label>Bedrooms</label><input name="bedrooms" /></div>
-            <div class="field"><label>Full bathrooms</label><input name="full_baths" /></div>
-            <div class="field"><label>Half bathrooms</label><input name="half_baths" /></div>
+            <div class="field"><label>Bedrooms</label><input name="Bedrooms" /></div>
+            <div class="field"><label>Full bathrooms</label><input name="Full bathrooms" /></div>
+            <div class="field"><label>Half bathrooms</label><input name="Half bathrooms" /></div>
           </div>
           <div class="three">
-            <div class="field"><label>Approx. heated square footage</label><input name="sqft_heated" /></div>
-            <div class="field"><label>Lot size</label><input name="lot_size" /></div>
-            <div class="field"><label>Year built</label><input name="year_built" /></div>
+            <div class="field"><label>Approx. heated square footage</label><input name="Heated square footage" /></div>
+            <div class="field"><label>Lot size</label><input name="Lot size" /></div>
+            <div class="field"><label>Year built</label><input name="Year built" /></div>
           </div>
         </section>
 
@@ -208,153 +140,99 @@
           <h2>2. Purchase and ownership history</h2>
           <p class="section-intro">This helps us understand timeline, builder-level selections, and anything that changed after you closed.</p>
           <div class="two">
-            <div class="field"><label>When did you purchase the home?</label><input name="purchase_date" placeholder="Month / Year" /></div>
-            <div class="field"><label>Did you purchase from the builder new?</label><select name="purchased_new"><option></option><option>Yes</option><option>No</option></select></div>
+            <div class="field"><label>When did you purchase the home?</label><input name="Purchase date" placeholder="Month / Year" /></div>
+            <div class="field"><label>Did you purchase from the builder new?</label><select name="Purchased new"><option></option><option>Yes</option><option>No</option></select></div>
           </div>
-          <div class="field"><label>Builder / community name</label><input name="builder_name" /></div>
-          <div class="field"><label>What structural options, elevations, or lot premiums were included when purchased?</label><textarea name="builder_options"></textarea></div>
+          <div class="field"><label>Builder / community name</label><input name="Builder or community" /></div>
+          <div class="field"><label>What structural options, elevations, or lot premiums were included when purchased?</label><textarea name="Builder options and lot premiums"></textarea></div>
         </section>
 
         <section class="section">
           <h2>3. Improvements and upgrades</h2>
           <p class="section-intro">Please include anything upgraded after purchase, even if it feels minor. Luxury buyers respond strongly to finish quality and thoughtful improvements.</p>
           <div class="checklist">
-            <label><input type="checkbox" name="upgrade_kitchen" /> Kitchen renovation or major kitchen upgrades</label>
-            <label><input type="checkbox" name="upgrade_primary_bath" /> Primary bath renovation</label>
-            <label><input type="checkbox" name="upgrade_secondary_baths" /> Secondary bath upgrades</label>
-            <label><input type="checkbox" name="upgrade_flooring" /> Flooring replacement or upgrade</label>
-            <label><input type="checkbox" name="upgrade_lighting" /> Designer lighting / fixtures</label>
-            <label><input type="checkbox" name="upgrade_builtins" /> Built-ins / millwork / trim upgrades</label>
-            <label><input type="checkbox" name="upgrade_landscape" /> Landscaping / hardscape / outdoor living</label>
-            <label><input type="checkbox" name="upgrade_systems" /> HVAC / roof / mechanical updates</label>
-            <label><input type="checkbox" name="upgrade_windows" /> Windows / doors</label>
-            <label><input type="checkbox" name="upgrade_pool" /> Pool / spa / water feature</label>
+            <label><input type="checkbox" name="Kitchen upgrades" value="Yes" /> Kitchen renovation or major kitchen upgrades</label>
+            <label><input type="checkbox" name="Primary bath renovation" value="Yes" /> Primary bath renovation</label>
+            <label><input type="checkbox" name="Secondary bath upgrades" value="Yes" /> Secondary bath upgrades</label>
+            <label><input type="checkbox" name="Flooring upgrades" value="Yes" /> Flooring replacement or upgrade</label>
+            <label><input type="checkbox" name="Designer lighting" value="Yes" /> Designer lighting / fixtures</label>
+            <label><input type="checkbox" name="Built-ins or millwork" value="Yes" /> Built-ins / millwork / trim upgrades</label>
+            <label><input type="checkbox" name="Landscape or outdoor living upgrades" value="Yes" /> Landscaping / hardscape / outdoor living</label>
+            <label><input type="checkbox" name="Mechanical upgrades" value="Yes" /> HVAC / roof / mechanical updates</label>
+            <label><input type="checkbox" name="Windows or doors upgraded" value="Yes" /> Windows / doors</label>
+            <label><input type="checkbox" name="Pool or spa feature" value="Yes" /> Pool / spa / water feature</label>
           </div>
-          <div class="field"><label>Please list upgrades, dates completed, and approximate cost if known</label><textarea name="upgrade_details" placeholder="Example: Added screened porch with fireplace in 2022, approx. $68,000"></textarea></div>
+          <div class="field"><label>Please list upgrades, dates completed, and approximate cost if known</label><textarea name="Upgrade details" placeholder="Example: Added screened porch with fireplace in 2022, approx. $68,000"></textarea></div>
         </section>
 
         <section class="section">
           <h2>4. Interior features and finishes</h2>
-          <div class="field"><label>What interior features are most special or distinctive about the home?</label><textarea name="interior_best_features"></textarea></div>
+          <div class="field"><label>What interior features are most special or distinctive about the home?</label><textarea name="Interior best features"></textarea></div>
           <div class="two">
-            <div class="field"><label>Ceiling heights / special architectural details</label><textarea name="architectural_details"></textarea></div>
-            <div class="field"><label>Appliance brands / kitchen finish notes</label><textarea name="kitchen_finish_notes"></textarea></div>
+            <div class="field"><label>Ceiling heights / special architectural details</label><textarea name="Architectural details"></textarea></div>
+            <div class="field"><label>Appliance brands / kitchen finish notes</label><textarea name="Kitchen finish notes"></textarea></div>
           </div>
           <div class="two">
-            <div class="field"><label>Primary suite highlights</label><textarea name="primary_suite"></textarea></div>
-            <div class="field"><label>Special rooms (office, gym, theater, wine room, bonus, guest suite, etc.)</label><textarea name="special_rooms"></textarea></div>
+            <div class="field"><label>Primary suite highlights</label><textarea name="Primary suite highlights"></textarea></div>
+            <div class="field"><label>Special rooms (office, gym, theater, wine room, bonus, guest suite, etc.)</label><textarea name="Special rooms"></textarea></div>
           </div>
         </section>
 
         <section class="section">
           <h2>5. Exterior, lot, and setting</h2>
           <div class="two">
-            <div class="field"><label>Lot advantages (cul-de-sac, privacy, views, water, backing to woods, etc.)</label><textarea name="lot_advantages"></textarea></div>
-            <div class="field"><label>Outdoor living features</label><textarea name="outdoor_features"></textarea></div>
+            <div class="field"><label>Lot advantages (cul-de-sac, privacy, views, water, backing to woods, etc.)</label><textarea name="Lot advantages"></textarea></div>
+            <div class="field"><label>Outdoor living features</label><textarea name="Outdoor living features"></textarea></div>
           </div>
-          <div class="field"><label>Anything about the setting that buyers would not know from public records?</label><textarea name="setting_hidden_value"></textarea></div>
+          <div class="field"><label>Anything about the setting that buyers would not know from public records?</label><textarea name="Hidden setting value"></textarea></div>
         </section>
 
         <section class="section">
           <h2>6. Systems, technology, and maintenance</h2>
           <div class="two">
-            <div class="field"><label>HVAC ages / service history</label><textarea name="hvac_info"></textarea></div>
-            <div class="field"><label>Roof, water heater, plumbing, electrical, or other major systems</label><textarea name="major_systems"></textarea></div>
+            <div class="field"><label>HVAC ages / service history</label><textarea name="HVAC info"></textarea></div>
+            <div class="field"><label>Roof, water heater, plumbing, electrical, or other major systems</label><textarea name="Major systems"></textarea></div>
           </div>
-          <div class="field"><label>Smart home, security, audio, automation, EV charging, generator, solar, or energy features</label><textarea name="smart_features"></textarea></div>
-          <div class="field"><label>Any known defects, deferred maintenance, or items to disclose?</label><textarea name="disclosure_notes"></textarea></div>
+          <div class="field"><label>Smart home, security, audio, automation, EV charging, generator, solar, or energy features</label><textarea name="Smart features"></textarea></div>
+          <div class="field"><label>Any known defects, deferred maintenance, or items to disclose?</label><textarea name="Disclosure notes"></textarea></div>
         </section>
 
         <section class="section">
           <h2>7. Community and lifestyle value</h2>
-          <div class="field"><label>What do you love most about the neighborhood or community?</label><textarea name="community_lifestyle"></textarea></div>
+          <div class="field"><label>What do you love most about the neighborhood or community?</label><textarea name="Community lifestyle"></textarea></div>
           <div class="two">
-            <div class="field"><label>HOA amenities / club features / neighborhood advantages</label><textarea name="hoa_amenities"></textarea></div>
-            <div class="field"><label>Nearby conveniences, schools, recreation, or lifestyle draws worth highlighting</label><textarea name="nearby_draws"></textarea></div>
+            <div class="field"><label>HOA amenities / club features / neighborhood advantages</label><textarea name="HOA amenities"></textarea></div>
+            <div class="field"><label>Nearby conveniences, schools, recreation, or lifestyle draws worth highlighting</label><textarea name="Nearby draws"></textarea></div>
           </div>
         </section>
 
         <section class="section">
           <h2>8. Pricing, timing, and seller priorities</h2>
           <div class="two">
-            <div class="field"><label>Ideal timing to list</label><input name="listing_timing" /></div>
-            <div class="field"><label>Are there any major constraints around move-out or closing?</label><input name="timing_constraints" /></div>
+            <div class="field"><label>Ideal timing to list</label><input name="Ideal listing timing" /></div>
+            <div class="field"><label>Are there any major constraints around move-out or closing?</label><input name="Timing constraints" /></div>
           </div>
-          <div class="field"><label>What do you believe sets your home apart from other homes buyers may compare it to?</label><textarea name="seller_positioning"></textarea></div>
-          <div class="field"><label>Are there any recent sales or active listings you believe buyers will compare your home against?</label><textarea name="seller_comp_view"></textarea></div>
-          <div class="field"><label>Anything else we should know before preparing valuation and strategy?</label><textarea name="final_notes"></textarea></div>
+          <div class="field"><label>What do you believe sets your home apart from other homes buyers may compare it to?</label><textarea name="Seller positioning notes"></textarea></div>
+          <div class="field"><label>Are there any recent sales or active listings you believe buyers will compare your home against?</label><textarea name="Seller comp view"></textarea></div>
+          <div class="field"><label>Anything else we should know before preparing valuation and strategy?</label><textarea name="Final notes"></textarea></div>
         </section>
 
         <section class="section">
           <h2>9. Optional photos and supporting documents</h2>
           <p class="section-intro">If helpful, you may also send photos or documents that highlight important improvements, finishes, views, lot advantages, or features not easily captured in public records.</p>
-          <div class="field"><label>Optional notes about photos or documents you plan to send separately</label><textarea name="photo_doc_notes" placeholder="Example: I will send updated kitchen photos, backyard twilight photos, and invoices for the screened porch and landscape lighting."></textarea></div>
+          <div class="field"><label>Optional notes about photos or documents you plan to send separately</label><textarea name="Photo or document notes" placeholder="Example: I will send updated kitchen photos, backyard twilight photos, and invoices for the screened porch and landscape lighting."></textarea></div>
           <p class="small">Photos, invoices, upgrade summaries, or builder selections can be emailed separately to <strong>chris@gormanresidential.com</strong>.</p>
         </section>
 
         <div class="submit-bar">
           <div>
             <div style="font-weight:700; color: var(--accent);">Thank you.</div>
-            <div class="small">Submitting this form drafts an email to Chris at Gorman Residential with your property profile.</div>
+            <div class="small">Your property profile will be submitted securely and routed to Chris at Gorman Residential.</div>
           </div>
           <button type="submit">Submit property profile</button>
         </div>
       </form>
     </main>
   </div>
-  <script>
-    const form = document.getElementById('luxury-intake-form');
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      const lines = [
-        `Seller Name: ${data.seller_name || ''}`,
-        `Seller Email: ${data.seller_email || ''}`,
-        `Seller Phone: ${data.seller_phone || ''}`,
-        `Property Address: ${data.address || ''}`,
-        `Bedrooms: ${data.bedrooms || ''}`,
-        `Full Baths: ${data.full_baths || ''}`,
-        `Half Baths: ${data.half_baths || ''}`,
-        `Heated Sq Ft: ${data.sqft_heated || ''}`,
-        `Lot Size: ${data.lot_size || ''}`,
-        `Year Built: ${data.year_built || ''}`,
-        '',
-        `Purchase Date: ${data.purchase_date || ''}`,
-        `Purchased New: ${data.purchased_new || ''}`,
-        `Builder/Community: ${data.builder_name || ''}`,
-        `Builder Options / Lot Premiums: ${data.builder_options || ''}`,
-        '',
-        `Upgrade Details: ${data.upgrade_details || ''}`,
-        `Interior Best Features: ${data.interior_best_features || ''}`,
-        `Architectural Details: ${data.architectural_details || ''}`,
-        `Kitchen Finish Notes: ${data.kitchen_finish_notes || ''}`,
-        `Primary Suite: ${data.primary_suite || ''}`,
-        `Special Rooms: ${data.special_rooms || ''}`,
-        '',
-        `Lot Advantages: ${data.lot_advantages || ''}`,
-        `Outdoor Features: ${data.outdoor_features || ''}`,
-        `Hidden Setting Value: ${data.setting_hidden_value || ''}`,
-        '',
-        `HVAC Info: ${data.hvac_info || ''}`,
-        `Major Systems: ${data.major_systems || ''}`,
-        `Smart Features: ${data.smart_features || ''}`,
-        `Disclosure Notes: ${data.disclosure_notes || ''}`,
-        '',
-        `Community Lifestyle: ${data.community_lifestyle || ''}`,
-        `HOA Amenities: ${data.hoa_amenities || ''}`,
-        `Nearby Draws: ${data.nearby_draws || ''}`,
-        '',
-        `Listing Timing: ${data.listing_timing || ''}`,
-        `Timing Constraints: ${data.timing_constraints || ''}`,
-        `Seller Positioning Notes: ${data.seller_positioning || ''}`,
-        `Seller Comp View: ${data.seller_comp_view || ''}`,
-        `Final Notes: ${data.final_notes || ''}`,
-        `Photo / Document Notes: ${data.photo_doc_notes || ''}`
-      ];
-      const subject = encodeURIComponent(`Confidential property profile: ${data.address || 'Luxury listing intake'}`);
-      const body = encodeURIComponent(lines.join('\n'));
-      window.location.href = `mailto:chris@gormanresidential.com?subject=${subject}&body=${body}`;
-    });
-  </script>
 </body>
 </html>
