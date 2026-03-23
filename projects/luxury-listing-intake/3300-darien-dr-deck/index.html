@@ -60,7 +60,8 @@
     .tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; max-width: 980px; }
     .tile { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 22px; font-size: 22px; line-height: 1.45; }
     .comp-slide { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: stretch; }
-    .img-placeholder { border: 1px dashed rgba(244,211,125,.28); border-radius: 24px; min-height: 420px; display: flex; align-items: center; justify-content: center; color: rgba(244,211,125,.55); font-size: 18px; padding: 24px; background: rgba(255,255,255,.01); }
+    .img-placeholder { border: 1px dashed rgba(244,211,125,.28); border-radius: 24px; min-height: 420px; display: flex; align-items: center; justify-content: center; color: rgba(244,211,125,.55); font-size: 18px; padding: 24px; background: rgba(255,255,255,.01); overflow: hidden; }
+    .img-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
     table { width: 100%; border-collapse: collapse; margin-top: 14px; }
     th, td { border-bottom: 1px solid var(--line); padding: 14px 10px; text-align: left; vertical-align: top; }
     th { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .12em; }
@@ -160,7 +161,7 @@
     <section class="slide">
       <div class="eyebrow">Primary Sold Comp</div>
       <div class="comp-slide">
-        <div class="img-placeholder">Image placeholder — 3304 Cheswick Drive</div>
+        <div class="img-placeholder"><img src="./assets/3304-cheswick.jpg" alt="3304 Cheswick Drive" /></div>
         <div class="card">
           <h2>3304 Cheswick Drive</h2>
           <p><strong>Role:</strong> Quality benchmark</p>
