@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3300 Darien Dr | Luxury Listing Presentation — Print</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --text: #f7edd2;
+      --muted: #d6bc7a;
+      --accent: #f4d37d;
+      --line: rgba(244,211,125,.18);
+      --soft: rgba(244,211,125,.05);
+    }
+    * { box-sizing: border-box; }
+    @page {
+      size: 11in 8.5in;
+      margin: 0.25in;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+    body { counter-reset: slide; }
+    .slide {
+      width: 10.5in;
+      height: 8in;
+      margin: 0 auto;
+      padding: 0.38in 0.44in 0.46in;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(244,211,125,.08), transparent 22%),
+        linear-gradient(180deg, #0b0b0b, #101010 100%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      page-break-after: always;
+      break-after: page;
+      page-break-inside: avoid;
+      overflow: hidden;
+    }
+    .slide:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    .slide::after {
+      counter-increment: slide;
+      content: counter(slide, decimal-leading-zero);
+      position: absolute;
+      bottom: 0.16in;
+      right: 0.24in;
+      color: rgba(244,211,125,.45);
+      font-size: 10px;
+      letter-spacing: .18em;
+    }
+    .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .16em; font-size: 9px; font-weight: 700; margin-bottom: 10px; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; color: var(--accent); letter-spacing: -.03em; line-height: 1.02; margin: 0 0 12px; }
+    h1 { font-size: 34px; max-width: none; }
+    h2 { font-size: 24px; max-width: none; }
+    h3 { margin: 0 0 8px; color: var(--accent); font-size: 17px; font-family: Georgia, "Times New Roman", serif; letter-spacing: -.02em; }
+    p, li { font-size: 13px; line-height: 1.36; color: var(--text); }
+    .sub { font-size: 15px; max-width: none; color: var(--text); }
+    .muted { color: var(--muted); }
+    ul { margin: 0; padding-left: 18px; max-width: none; }
+    .two-col, .three-col { display: grid; gap: 14px; margin-top: 6px; }
+    .two-col { grid-template-columns: 1fr 1fr; }
+    .three-col { grid-template-columns: repeat(3, 1fr); }
+    .card { background: rgba(255,255,255,.02); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+    .statement { max-width: none; border-left: 3px solid rgba(111,83,23,.28); padding-left: 16px; }
+    .quote { font-size: 17px; line-height: 1.38; max-width: none; }
+    .price { font-size: 26px; color: var(--accent); font-weight: 800; letter-spacing: -.04em; margin-bottom: 5px; }
+    .label { color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 8px; font-weight: 700; }
+    .tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; max-width: none; }
+    .tile { background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 12px; font-size: 12px; line-height: 1.3; }
+    .comp-slide { display: grid; grid-template-columns: 1.05fr .95fr; gap: 14px; align-items: stretch; }
+    .img-placeholder { border: 1px solid var(--line); border-radius: 14px; min-height: 2.5in; display: flex; align-items: center; justify-content: center; color: rgba(244,211,125,.55); font-size: 12px; padding: 10px; background: rgba(255,255,255,.02); overflow: hidden; }
+    .img-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 10px; background: #0f0f0f; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 7px 6px; text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 8.5px; text-transform: uppercase; letter-spacing: .12em; }
+    td { font-size: 10px; line-height: 1.24; }
+    .callout { margin-top: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--soft); max-width: none; }
+    .tight-table th, .tight-table td { padding: 6px 5px; }
+    .tight-table td { font-size: 9px; line-height: 1.18; }
+    .tight-table th { font-size: 8px; }
+    .highlight-row { background: rgba(244,211,125,.04); }
+    .card, .tile, .callout, .img-placeholder, table { break-inside: avoid; page-break-inside: avoid; }
+  </style>
+</head>
+<body>
+  <section class="slide">
+    <div class="eyebrow">Gorman Residential</div>
+    <h1>3300 Darien Dr</h1>
+    <p class="sub">Luxury Listing Strategy, Positioning & Pricing</p>
+    <p class="muted">Prepared by Chris Gorman</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Opening Perspective</div>
+    <h2>Exceptional homes are not priced by formula. They are positioned.</h2>
+    <div class="statement"><p class="quote">For a property like 3300 Darien Dr, the objective is not simply to determine what the home is worth in a vacuum. The objective is to introduce it to the market in a way that reflects its quality, rarity, and place within Raleigh’s luxury landscape.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Property Story</div>
+    <div class="two-col">
+      <div>
+        <h2>A French-inspired, highly improved luxury residence with warmth, character, and presence.</h2>
+        <p>Darien should not be grouped with generic older inventory. It belongs in the conversation with high-character, highly livable luxury homes that offer architectural identity, entertaining quality, and real lifestyle value.</p>
+      </div>
+      <div class="card" style="align-self:center; max-width: 100%; padding: 12px 14px;">
+        <div class="label">Core narrative</div>
+        <p style="font-family: Georgia, &quot;Times New Roman&quot;, serif; font-size: 13px; line-height: 1.45; margin: 0; color: var(--text);">An elegant, high-character home that combines architectural warmth, meaningful upgrades, and a lifestyle that feels both refined and deeply livable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">What Elevates This Home</div>
+    <h2>Luxury attributes that shape buyer perception</h2>
+    <div class="tile-grid">
+      <div class="tile">French-inspired architecture and design language</div>
+      <div class="tile">10'3" first-floor ceilings and elegant scale</div>
+      <div class="tile">Sub-Zero, Wolf, and built-in Miele kitchen package</div>
+      <div class="tile">Covered patio with fireplace and private hedge-lined yard</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Capital Improvements</div>
+    <h2>Recent investment strengthens both value and confidence.</h2>
+    <div class="two-col">
+      <div class="card"><h3>Structural / systems</h3><p>Multiple HVAC replacements, tankless water heater, water leak detection and other stewardship-oriented improvements reinforce confidence in the home’s condition and care.</p></div>
+      <div class="card"><h3>Finish / utility</h3><p>Office and bath renovation, stair and hardwood improvements, third-floor flex/gym finish work, smart lighting, audio, security, and landscape lighting all strengthen buyer perception.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Lifestyle Positioning</div>
+    <h2>This is a home that sells a feeling, not just a floor plan.</h2>
+    <div class="statement"><p class="quote">Darien’s edge is not just square footage. It is the combination of entertaining warmth, architectural personality, family livability, privacy, and a school-location story buyers immediately understand.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Buyer Psychology</div>
+    <h2>Luxury buyers compare homes through both data and emotion.</h2>
+    <div class="two-col">
+      <div class="card"><h3>Analytical</h3><ul><li>size</li><li>age</li><li>location</li><li>school assignment</li><li>recent sales</li></ul></div>
+      <div class="card"><h3>Emotional</h3><ul><li>how the home feels</li><li>how it entertains</li><li>whether it feels elevated</li><li>whether it feels private</li><li>whether it feels worth the asking price</li></ul></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Analysis Methodology</div>
+    <h2>How the pricing analysis was built</h2>
+    <div class="three-col">
+      <div class="card"><h3>Sold Support</h3><p>Used to establish where the market has recently rewarded similar homes.</p></div>
+      <div class="card"><h3>Pending Signals</h3><p>Used to understand what current buyers are accepting right now.</p></div>
+      <div class="card"><h3>Active Competition</h3><p>Used to understand what Darien must stand against in the buyer’s mind.</p></div>
+    </div>
+    <div class="callout"><p>In this segment, no single comp gives the answer. The strategy comes from the pattern created by the solds, the pendings, and the active competitive set.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Sold Support</div>
+    <h2>What the sold market tells us</h2>
+    <p class="sub">The solds establish where the market has recently rewarded similar quality, scale, and buyer appeal. They do not create a single answer, but together they frame the supportable range.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Primary Sold Comp</div>
+    <div class="comp-slide">
+      <div class="img-placeholder"><img src="./assets/3304-cheswick.jpg" alt="3304 Cheswick Drive" /></div>
+      <div class="card">
+        <h2>3304 Cheswick Drive</h2>
+        <p><strong>Role:</strong> Quality benchmark</p>
+        <p><strong>Why it matters:</strong> Similar scale with strong renovated/custom feel, useful for supporting Darien’s premium quality positioning.</p>
+        <p><strong>Why Darien may compete well:</strong> Better lifestyle story, entertaining warmth, and a more emotionally distinctive character profile.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Primary Sold Comp</div>
+    <div class="comp-slide">
+      <div class="img-placeholder"><img src="./assets/1829-ridge.jpg" alt="1829 Ridge Rd" /></div>
+      <div class="card">
+        <h2>1829 Ridge Rd</h2>
+        <p><strong>Role:</strong> Same-area support comp</p>
+        <p><strong>Why it matters:</strong> Reinforces what buyers are willing to pay in the same broader Ridge/Darien/27607 orbit.</p>
+        <p><strong>Important note:</strong> Smaller than Darien, so best used to support local pricing strength rather than as a direct size anchor.</p>
+        <p><strong>Additional context:</strong> This appears to have been an off-market sale, which means it may not have fully tested open-market demand or achieved full market value.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Primary Sold Comp</div>
+    <div class="comp-slide">
+      <div class="img-placeholder"><img src="./assets/909-lake-boone.jpg" alt="909 Lake Boone Trail" /></div>
+      <div class="card">
+        <h2>909 Lake Boone Trail</h2>
+        <p><strong>Role:</strong> School-pattern support comp</p>
+        <p><strong>Why it matters:</strong> Important support for the same broad Lacy/Martin/Broughton buyer pool.</p>
+        <p><strong>Darien advantage:</strong> Darien is not located on a busier road, which matters to buyer perception and livability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Pending / Active Signals</div>
+    <h2>What current buyers are accepting right now</h2>
+    <p class="sub">Pending and active homes are especially important because they show the range of what buyers are considering in real time.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Primary Pending Comp</div>
+    <div class="comp-slide">
+      <div class="img-placeholder"><img src="./assets/308-cambridge-woods.jpg" alt="308 Cambridge Woods Way" /></div>
+      <div class="card">
+        <h2>308 Cambridge Woods Way</h2>
+        <p><strong>Role:</strong> Immediate pending benchmark</p>
+        <p><strong>Why it matters:</strong> Same broad school/lifestyle conversation and immediate pending response at $1.9M.</p>
+        <p><strong>What it tells us:</strong> Well-positioned established luxury homes can still move quickly when buyers see quality and value alignment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Primary Pending Comp</div>
+    <div class="comp-slide">
+      <div class="img-placeholder"><img src="./assets/2908-claremont.jpg" alt="2908 Claremont Road" /></div>
+      <div class="card">
+        <h2>2908 Claremont Road</h2>
+        <p><strong>Role:</strong> Upper-end established-home benchmark</p>
+        <p><strong>Why it matters:</strong> Large, highly amenitized pending property that shows what the market may tolerate at the top end for established luxury product.</p>
+        <p><strong>What it tells us:</strong> Premium pricing is possible, but the home must be positioned convincingly and may require more patience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Primary Pending Comp</div>
+    <div class="comp-slide">
+      <div class="img-placeholder"><img src="./assets/2608-st-marys.jpg" alt="2608 St Marys Street" /></div>
+      <div class="card">
+        <h2>2608 St Marys Street</h2>
+        <p><strong>Role:</strong> Upper-tier competitive context</p>
+        <p><strong>Why it matters:</strong> Amenity-rich, high-profile luxury alternative in the same broad buyer pool.</p>
+        <p><strong>What it tells us:</strong> Darien does not need to out-amenity these homes. It needs to out-position them on character, warmth, livability, and elegance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Comp Analysis Summary</div>
+    <h2>The analytical backbone behind the recommendation</h2>
+    <table class="tight-table">
+      <thead>
+        <tr><th>Property</th><th>Status</th><th>Price</th><th>PPSQFT</th><th>Size</th><th>Beds</th><th>Baths</th><th>Year</th><th>Takeaway</th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row"><td>3300 Darien Dr</td><td>Subject</td><td>TBD</td><td>TBD</td><td>5,303 SF + finished flex</td><td>5</td><td>4F / 2H</td><td>2008</td><td>French-inspired, highly improved, strong entertaining and school/lifestyle appeal</td></tr>
+        <tr><td>3304 Cheswick Dr</td><td>Sold</td><td>$1.85M</td><td>$348/SF</td><td>5,316 SF</td><td>6</td><td>5F / 1H</td><td>2015 / 2024 remodel</td><td>Quality benchmark for premium established luxury stock</td></tr>
+        <tr><td>1829 Ridge Rd</td><td>Sold</td><td>$1.52M</td><td>~$324/SF</td><td>~4,692 SF</td><td>4</td><td>4F / 1H</td><td>2005</td><td>Strong same-area support, though smaller than subject</td></tr>
+        <tr><td>909 Lake Boone Trail</td><td>Sold</td><td>~$1.97M</td><td>~$372/SF</td><td>5,300 SF</td><td>4</td><td>4F / 3H</td><td>2020</td><td>Important school-pattern support; subject has road/location advantage</td></tr>
+        <tr><td>308 Cambridge Woods</td><td>Pending</td><td>$1.90M</td><td>$379/SF</td><td>5,013 SF</td><td>4</td><td>4F / 1H</td><td>1989</td><td>Immediate pending benchmark; strong current-market signal</td></tr>
+        <tr><td>2908 Claremont Rd</td><td>Pending</td><td>$2.495M</td><td>$424/SF</td><td>5,884 SF</td><td>5</td><td>4F / 0H</td><td>2011</td><td>Upper-end established-home benchmark with more amenities and larger lot</td></tr>
+        <tr><td>2608 St Marys St</td><td>Pending</td><td>$2.675M</td><td>$414/SF</td><td>6,463 SF total</td><td>5</td><td>4F / 1H</td><td>2006</td><td>Amenity-rich upper-tier context, not a tight apples-to-apples comp</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><p>Takeaway: the solds support meaningful value, while the pendings and active luxury set justify a premium conversation if the home is presented at a high level.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Pricing Recommendation Framework</div>
+    <h2>How the market evidence translates into strategy</h2>
+    <table class="tight-table">
+      <thead>
+        <tr><th>Strategy</th><th>Range</th><th>Primary support</th><th>Expected market response</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Competition-Driven</td><td>$1.89M–$1.95M</td><td>Lower/mid established-home band plus urgency-based positioning</td><td>Most likely to generate immediate traffic and competitive momentum</td></tr>
+        <tr class="highlight-row"><td>Market-Aligned</td><td>$1.96M–$2.05M</td><td>Strongest balance of sold support and pending market evidence</td><td>Most defensible balance of credibility, activity, and value protection</td></tr>
+        <tr><td>Premium Positioning</td><td>$2.051M–$2.15M</td><td>Supported by stronger pending/active luxury context and Darien’s premium story</td><td>Best for negotiation room and upper-tier positioning, but requires more patience and flawless execution</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><p>Each pricing path can work. The right choice depends on whether the priority is maximizing early momentum, balancing market support with value protection, or launching with a premium posture and greater negotiation room.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Pricing Strategy</div>
+    <h2>Three viable launch strategies</h2>
+    <div class="three-col">
+      <div class="card"><div class="label">Competition-Driven</div><div class="price">$1.89M–$1.95M</div><p>Designed to create urgency, traffic, and competitive energy.</p></div>
+      <div class="card"><div class="label">Market-Aligned</div><div class="price">$1.96M–$2.05M</div><p>Designed to balance supportability, value, and strong buyer engagement.</p></div>
+      <div class="card"><div class="label">Premium Positioning</div><div class="price">$2.051M–$2.15M</div><p>Designed to introduce the home at the upper end of its supportable range and preserve negotiation room.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Option 1 Analysis</div>
+    <h2>Competition-Driven Strategy</h2>
+    <div class="two-col">
+      <div class="card"><div class="price">$1.89M–$1.95M</div><p>This strategy leans on the reality that well-positioned homes can create immediate urgency when they feel compelling relative to both sold support and active competition.</p></div>
+      <div class="card"><h3>Analytical support</h3><p>This approach draws its strength from the lower and middle established-home band and is most effective when the priority is pace, showings, and the possibility of competitive pressure.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Option 2 Analysis</div>
+    <h2>Market-Aligned Strategy</h2>
+    <div class="two-col">
+      <div class="card"><div class="price">$1.96M–$2.05M</div><p>This strategy is the cleanest balance between what the sold support suggests and what the current pending market implies.</p></div>
+      <div class="card"><h3>Analytical support</h3><p>This is the most supportable range if the objective is a strong combination of credibility, buyer engagement, and value protection without overreaching.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Option 3 Analysis</div>
+    <h2>Premium Positioning Strategy</h2>
+    <div class="two-col">
+      <div class="card"><div class="price">$2.051M–$2.15M</div><p>This strategy is a positioning decision designed to present Darien at the upper end of its supportable range and preserve meaningful negotiation room.</p></div>
+      <div class="card"><h3>Analytical support</h3><p>This range is supported more by the stronger pending/active context and the home’s premium presentation story than by conservative sold averaging alone. It is strongest when paired with excellent execution.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Recommendation</div>
+    <h2>A premium path, a market-aligned path, and a competition-driven path.</h2>
+    <div class="statement"><p class="quote">The goal is not to force a single number. The goal is to choose the strategy that best matches how you want to position the home, how much negotiating room you want to preserve, and how aggressively you want to pursue early buyer momentum.</p></div>
+    <p class="muted">Each pricing path can work. The right choice depends on whether the priority is premium positioning, a balanced market strategy, or immediate competitive activity.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Luxury Preparation</div>
+    <h2>A premium listing deserves a premium market debut.</h2>
+    <div class="tile-grid">
+      <div class="tile">strategic pre-market preparation</div>
+      <div class="tile">room-by-room presentation guidance</div>
+      <div class="tile">repair and refinement recommendations</div>
+      <div class="tile">staging consultation where beneficial</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Luxury Visual Package</div>
+    <h2>How the home is seen will shape how it is valued.</h2>
+    <div class="tile-grid">
+      <div class="tile">premium photography</div>
+      <div class="tile">twilight imagery</div>
+      <div class="tile">cinematic video</div>
+      <div class="tile">floor plan and feature schedule</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Positioning & Storytelling</div>
+    <h2>The right buyer needs a reason to remember this home.</h2>
+    <div class="statement"><p class="quote">Darien should be marketed as elegant, architectural, entertaining-forward, highly improved, and deeply livable — not as just another large house in a luxury price band.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Luxury Marketing Exposure</div>
+    <h2>Exposure should feel targeted, polished, and intentional.</h2>
+    <div class="tile-grid">
+      <div class="tile">MLS launch with elevated presentation</div>
+      <div class="tile">digital and social media campaign</div>
+      <div class="tile">agent-to-agent outreach</div>
+      <div class="tile">targeted promotion to relevant buyer networks</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Seller Experience</div>
+    <h2>The process should feel as polished as the presentation.</h2>
+    <div class="two-col">
+      <div class="card"><h3>Service promise</h3><p>High-touch communication, vendor coordination, strategic prep guidance, and calm decision support from launch through negotiation.</p></div>
+      <div class="card"><h3>Why it matters</h3><p>Luxury sellers are not only hiring marketing. They are hiring confidence, judgment, and a process that feels controlled and elevated.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Execution</div>
+    <h2>If the home is launched at a premium, the presentation has to match.</h2>
+    <ul>
+      <li>exceptional photography</li>
+      <li>clean improvement schedule</li>
+      <li>elegant visual presentation</li>
+      <li>confident positioning against active luxury inventory</li>
+      <li>clear emphasis on architecture, lifestyle, and school/location appeal</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Closing</div>
+    <h2>The strongest luxury listings are introduced with intention.</h2>
+    <div class="statement"><p class="quote">3300 Darien Dr has the quality, character, and positioning to justify a premium market conversation. The final decision is not only about value — it is about choosing the strategy that best reflects the home and your goals.</p></div>
+  </section>
+</body>
+</html>
