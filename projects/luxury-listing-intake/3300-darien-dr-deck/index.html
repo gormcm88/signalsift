@@ -58,6 +58,15 @@
     .tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; max-width: 980px; }
     .tile { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 22px; font-size: 22px; line-height: 1.45; }
     .comp-slide { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: stretch; }
+    .comp-slide .card { padding: 22px; }
+    .comp-slide .card p { font-size: 20px; line-height: 1.42; }
+    .mini-map { margin-top: 14px; }
+    .mini-map svg { width: 100%; height: auto; display: block; }
+    .map-key { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 8px; color: var(--muted); font-size: 12px; }
+    .map-key span { display: inline-flex; align-items: center; gap: 7px; }
+    .star-key, .dot-key { display: inline-block; }
+    .star-key { width: 11px; height: 11px; background: var(--accent); clip-path: polygon(50% 0%, 61% 36%, 98% 36%, 68% 57%, 79% 93%, 50% 71%, 21% 93%, 32% 57%, 2% 36%, 39% 36%); }
+    .dot-key { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); }
     .img-placeholder { border: 1px solid var(--line); border-radius: 24px; min-height: 420px; display: flex; align-items: center; justify-content: center; color: rgba(244,211,125,.55); font-size: 18px; padding: 18px; background: rgba(255,255,255,.02); overflow: hidden; }
     .img-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 14px; background: #0f0f0f; }
     table { width: 100%; border-collapse: collapse; margin-top: 14px; }
@@ -256,6 +265,22 @@
         <p><strong>Role:</strong> Quality benchmark</p>
         <p><strong>Why it matters:</strong> Similar scale with strong renovated/custom feel, useful for supporting Darien’s premium quality positioning.</p>
         <p><strong>Why Darien may compete well:</strong> Better lifestyle story, entertaining warmth, and a more emotionally distinctive character profile.</p>
+        <div class="mini-map">
+          <div class="label">Relative location</div>
+          <svg viewBox="0 0 220 124" aria-label="Relative map for 3304 Cheswick and Darien">
+            <rect x="1" y="1" width="218" height="122" rx="12" fill="var(--soft)" stroke="var(--line)" />
+            <path d="M18 96 C52 82, 76 90, 105 74 S162 58, 202 36" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.7" />
+            <path d="M22 28 C58 45, 84 42, 122 51 S174 72, 198 88" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.45" />
+            <path d="M58 14 L58 110 M112 14 L112 110 M166 14 L166 110" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <path d="M14 36 L206 36 M14 76 L206 76" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <line x1="45.3" y1="98.5" x2="174.7" y2="25.5" stroke="var(--line)" stroke-width="1.4" stroke-dasharray="4 4" />
+            <polygon points="45.3,91.5 47.5,96.3 52.3,98.5 47.5,100.7 45.3,105.5 43.099999999999994,100.7 38.3,98.5 43.099999999999994,96.3" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" />
+            <circle cx="174.7" cy="25.5" r="5.4" fill="var(--muted)" stroke="var(--bg)" stroke-width="1.2" />
+            <text x="54.3" y="90.5" fill="var(--text)" font-size="10">Darien</text>
+            <text x="145" y="17.5" fill="var(--text)" font-size="10">3304 Cheswick</text>
+          </svg>
+          <div class="map-key"><span><i class="star-key"></i> Subject</span><span><i class="dot-key"></i> Comparable</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -270,6 +295,22 @@
         <p><strong>Why it matters:</strong> Reinforces what buyers are willing to pay in the same broader Ridge/Darien/27607 orbit.</p>
         <p><strong>Important note:</strong> Smaller than Darien, so best used to support local pricing strength rather than as a direct size anchor.</p>
         <p><strong>Additional context:</strong> This appears to have been an off-market sale, which means it may not have fully tested open-market demand or achieved full market value.</p>
+        <div class="mini-map">
+          <div class="label">Relative location</div>
+          <svg viewBox="0 0 220 124" aria-label="Relative map for 1829 Ridge and Darien">
+            <rect x="1" y="1" width="218" height="122" rx="12" fill="var(--soft)" stroke="var(--line)" />
+            <path d="M18 96 C52 82, 76 90, 105 74 S162 58, 202 36" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.7" />
+            <path d="M22 28 C58 45, 84 42, 122 51 S174 72, 198 88" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.45" />
+            <path d="M58 14 L58 110 M112 14 L112 110 M166 14 L166 110" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <path d="M14 36 L206 36 M14 76 L206 76" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            
+            <polygon points="108.6,56.0 110.8,60.8 115.6,63.0 110.8,65.2 108.6,70.0 106.39999999999999,65.2 101.6,63.0 106.39999999999999,60.8" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" />
+            <circle cx="111.4" cy="61.0" r="5.4" fill="var(--muted)" stroke="var(--bg)" stroke-width="1.2" />
+            <text x="117.6" y="55.0" fill="var(--text)" font-size="10">Darien</text>
+            <text x="120.4" y="53.0" fill="var(--text)" font-size="10">1829 Ridge</text>
+          </svg>
+          <div class="map-key"><span><i class="star-key"></i> Subject</span><span><i class="dot-key"></i> Comparable</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -283,6 +324,22 @@
         <p><strong>Role:</strong> School-pattern support comp</p>
         <p><strong>Why it matters:</strong> Important support for the same broad Lacy/Martin/Broughton buyer pool.</p>
         <p><strong>Darien advantage:</strong> Darien is not located on a busier road, which matters to buyer perception and livability.</p>
+        <div class="mini-map">
+          <div class="label">Relative location</div>
+          <svg viewBox="0 0 220 124" aria-label="Relative map for 909 Lake Boone and Darien">
+            <rect x="1" y="1" width="218" height="122" rx="12" fill="var(--soft)" stroke="var(--line)" />
+            <path d="M18 96 C52 82, 76 90, 105 74 S162 58, 202 36" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.7" />
+            <path d="M22 28 C58 45, 84 42, 122 51 S174 72, 198 88" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.45" />
+            <path d="M58 14 L58 110 M112 14 L112 110 M166 14 L166 110" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <path d="M14 36 L206 36 M14 76 L206 76" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <line x1="45.3" y1="64.0" x2="174.7" y2="60.0" stroke="var(--line)" stroke-width="1.4" stroke-dasharray="4 4" />
+            <polygon points="45.3,57.0 47.5,61.8 52.3,64.0 47.5,66.2 45.3,71.0 43.099999999999994,66.2 38.3,64.0 43.099999999999994,61.8" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" />
+            <circle cx="174.7" cy="60.0" r="5.4" fill="var(--muted)" stroke="var(--bg)" stroke-width="1.2" />
+            <text x="54.3" y="56.0" fill="var(--text)" font-size="10">Darien</text>
+            <text x="145" y="52.0" fill="var(--text)" font-size="10">909 Lake Boone</text>
+          </svg>
+          <div class="map-key"><span><i class="star-key"></i> Subject</span><span><i class="dot-key"></i> Comparable</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -302,6 +359,22 @@
         <p><strong>Role:</strong> Immediate pending benchmark</p>
         <p><strong>Why it matters:</strong> Same broad school/lifestyle conversation and immediate pending response at $1.9M.</p>
         <p><strong>What it tells us:</strong> Well-positioned established luxury homes can still move quickly when buyers see quality and value alignment.</p>
+        <div class="mini-map">
+          <div class="label">Relative location</div>
+          <svg viewBox="0 0 220 124" aria-label="Relative map for 308 Cambridge Woods and Darien">
+            <rect x="1" y="1" width="218" height="122" rx="12" fill="var(--soft)" stroke="var(--line)" />
+            <path d="M18 96 C52 82, 76 90, 105 74 S162 58, 202 36" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.7" />
+            <path d="M22 28 C58 45, 84 42, 122 51 S174 72, 198 88" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.45" />
+            <path d="M58 14 L58 110 M112 14 L112 110 M166 14 L166 110" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <path d="M14 36 L206 36 M14 76 L206 76" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <line x1="45.3" y1="87.5" x2="174.7" y2="36.5" stroke="var(--line)" stroke-width="1.4" stroke-dasharray="4 4" />
+            <polygon points="45.3,80.5 47.5,85.3 52.3,87.5 47.5,89.7 45.3,94.5 43.099999999999994,89.7 38.3,87.5 43.099999999999994,85.3" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" />
+            <circle cx="174.7" cy="36.5" r="5.4" fill="var(--muted)" stroke="var(--bg)" stroke-width="1.2" />
+            <text x="54.3" y="79.5" fill="var(--text)" font-size="10">Darien</text>
+            <text x="145" y="28.5" fill="var(--text)" font-size="10">308 Cambridge Woods</text>
+          </svg>
+          <div class="map-key"><span><i class="star-key"></i> Subject</span><span><i class="dot-key"></i> Comparable</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -315,6 +388,22 @@
         <p><strong>Role:</strong> Upper-end established-home benchmark</p>
         <p><strong>Why it matters:</strong> Large, highly amenitized pending property that shows what the market may tolerate at the top end for established luxury product.</p>
         <p><strong>What it tells us:</strong> Premium pricing is possible, but the home must be positioned convincingly and may require more patience.</p>
+        <div class="mini-map">
+          <div class="label">Relative location</div>
+          <svg viewBox="0 0 220 124" aria-label="Relative map for 2908 Claremont and Darien">
+            <rect x="1" y="1" width="218" height="122" rx="12" fill="var(--soft)" stroke="var(--line)" />
+            <path d="M18 96 C52 82, 76 90, 105 74 S162 58, 202 36" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.7" />
+            <path d="M22 28 C58 45, 84 42, 122 51 S174 72, 198 88" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.45" />
+            <path d="M58 14 L58 110 M112 14 L112 110 M166 14 L166 110" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <path d="M14 36 L206 36 M14 76 L206 76" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <line x1="45.3" y1="98.5" x2="174.7" y2="25.5" stroke="var(--line)" stroke-width="1.4" stroke-dasharray="4 4" />
+            <polygon points="45.3,91.5 47.5,96.3 52.3,98.5 47.5,100.7 45.3,105.5 43.099999999999994,100.7 38.3,98.5 43.099999999999994,96.3" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" />
+            <circle cx="174.7" cy="25.5" r="5.4" fill="var(--muted)" stroke="var(--bg)" stroke-width="1.2" />
+            <text x="54.3" y="90.5" fill="var(--text)" font-size="10">Darien</text>
+            <text x="145" y="17.5" fill="var(--text)" font-size="10">2908 Claremont</text>
+          </svg>
+          <div class="map-key"><span><i class="star-key"></i> Subject</span><span><i class="dot-key"></i> Comparable</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -328,6 +417,22 @@
         <p><strong>Role:</strong> Upper-tier competitive context</p>
         <p><strong>Why it matters:</strong> Amenity-rich, high-profile luxury alternative in the same broad buyer pool.</p>
         <p><strong>What it tells us:</strong> Darien does not need to out-amenity these homes. It needs to out-position them on character, warmth, livability, and elegance.</p>
+        <div class="mini-map">
+          <div class="label">Relative location</div>
+          <svg viewBox="0 0 220 124" aria-label="Relative map for 2608 St Marys and Darien">
+            <rect x="1" y="1" width="218" height="122" rx="12" fill="var(--soft)" stroke="var(--line)" />
+            <path d="M18 96 C52 82, 76 90, 105 74 S162 58, 202 36" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.7" />
+            <path d="M22 28 C58 45, 84 42, 122 51 S174 72, 198 88" fill="none" stroke="var(--line)" stroke-width="1.2" opacity="0.45" />
+            <path d="M58 14 L58 110 M112 14 L112 110 M166 14 L166 110" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <path d="M14 36 L206 36 M14 76 L206 76" stroke="var(--line)" stroke-width="0.8" opacity="0.18" />
+            <line x1="45.3" y1="80.3" x2="174.7" y2="43.7" stroke="var(--line)" stroke-width="1.4" stroke-dasharray="4 4" />
+            <polygon points="45.3,73.3 47.5,78.1 52.3,80.3 47.5,82.5 45.3,87.3 43.099999999999994,82.5 38.3,80.3 43.099999999999994,78.1" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" />
+            <circle cx="174.7" cy="43.7" r="5.4" fill="var(--muted)" stroke="var(--bg)" stroke-width="1.2" />
+            <text x="54.3" y="72.3" fill="var(--text)" font-size="10">Darien</text>
+            <text x="145" y="35.7" fill="var(--text)" font-size="10">2608 St Marys</text>
+          </svg>
+          <div class="map-key"><span><i class="star-key"></i> Subject</span><span><i class="dot-key"></i> Comparable</span></div>
+        </div>
       </div>
     </div>
   </section>
