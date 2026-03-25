@@ -90,6 +90,11 @@
     .dot-key { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
     .img-placeholder { border: 1px solid var(--line); border-radius: 14px; min-height: 2.5in; display: flex; align-items: center; justify-content: center; color: rgba(111,83,23,.55); font-size: 12px; padding: 10px; background: #fffdfa; overflow: hidden; }
     .img-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 10px; background: #ffffff; }
+    .photo-stack { display: flex; flex-direction: column; gap: 8px; }
+    .photo-stats { border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.02); padding: 8px 10px; }
+    .photo-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .photo-stat-label { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 7.5px; margin-bottom: 3px; }
+    .photo-stat-value { color: var(--text); font-size: 10px; line-height: 1.15; font-weight: 600; }
     table { width: 100%; border-collapse: collapse; margin-top: 8px; }
     th, td { border-bottom: 1px solid var(--line); padding: 7px 6px; text-align: left; vertical-align: top; }
     th { color: var(--muted); font-size: 8.5px; text-transform: uppercase; letter-spacing: .12em; }
@@ -208,7 +213,16 @@
   <section class="slide">
     <div class="eyebrow">Primary Sold Comp</div>
     <div class="comp-slide">
+      <div class="photo-stack">
       <div class="img-placeholder"><img src="./assets/3304-cheswick.jpg" alt="3304 Cheswick Drive" /></div>
+      <div class="photo-stats">
+        <div class="photo-stats-grid">
+          <div><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.85M</div></div>
+          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">0</div></div>
+          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,316 SF</div></div>
+        </div>
+      </div>
+    </div>
       <div class="card">
         <h2>3304 Cheswick Drive</h2>
         <p><strong>Role:</strong> Quality benchmark</p>
@@ -226,7 +240,16 @@
   <section class="slide">
     <div class="eyebrow">Primary Sold Comp</div>
     <div class="comp-slide">
+      <div class="photo-stack">
       <div class="img-placeholder"><img src="./assets/1829-ridge.jpg" alt="1829 Ridge Rd" /></div>
+      <div class="photo-stats">
+        <div class="photo-stats-grid">
+          <div><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.52M</div></div>
+          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">Unknown</div></div>
+          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">4,692 SF</div></div>
+        </div>
+      </div>
+    </div>
       <div class="card">
         <h2>1829 Ridge Rd</h2>
         <p><strong>Role:</strong> Same-area support comp</p>
@@ -245,7 +268,16 @@
   <section class="slide">
     <div class="eyebrow">Primary Sold Comp</div>
     <div class="comp-slide">
+      <div class="photo-stack">
       <div class="img-placeholder"><img src="./assets/909-lake-boone.jpg" alt="909 Lake Boone Trail" /></div>
+      <div class="photo-stats">
+        <div class="photo-stats-grid">
+          <div><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.97M</div></div>
+          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">178</div></div>
+          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,300 SF</div></div>
+        </div>
+      </div>
+    </div>
       <div class="card">
         <h2>909 Lake Boone Trail</h2>
         <p><strong>Role:</strong> School-pattern support comp</p>
@@ -269,7 +301,16 @@
   <section class="slide">
     <div class="eyebrow">Primary Pending Comp</div>
     <div class="comp-slide">
+      <div class="photo-stack">
       <div class="img-placeholder"><img src="./assets/308-cambridge-woods.jpg" alt="308 Cambridge Woods Way" /></div>
+      <div class="photo-stats">
+        <div class="photo-stats-grid">
+          <div><div class="photo-stat-label">List price</div><div class="photo-stat-value">$1.90M</div></div>
+          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">0</div></div>
+          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,013 SF</div></div>
+        </div>
+      </div>
+    </div>
       <div class="card">
         <h2>308 Cambridge Woods Way</h2>
         <p><strong>Role:</strong> Immediate pending benchmark</p>
@@ -287,7 +328,16 @@
   <section class="slide">
     <div class="eyebrow">Primary Pending Comp</div>
     <div class="comp-slide">
+      <div class="photo-stack">
       <div class="img-placeholder"><img src="./assets/2908-claremont.jpg" alt="2908 Claremont Road" /></div>
+      <div class="photo-stats">
+        <div class="photo-stats-grid">
+          <div><div class="photo-stat-label">List price</div><div class="photo-stat-value">$2.495M</div></div>
+          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">98</div></div>
+          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,884 SF</div></div>
+        </div>
+      </div>
+    </div>
       <div class="card">
         <h2>2908 Claremont Road</h2>
         <p><strong>Role:</strong> Upper-end established-home benchmark</p>
@@ -305,7 +355,16 @@
   <section class="slide">
     <div class="eyebrow">Primary Pending Comp</div>
     <div class="comp-slide">
+      <div class="photo-stack">
       <div class="img-placeholder"><img src="./assets/2608-st-marys.jpg" alt="2608 St Marys Street" /></div>
+      <div class="photo-stats">
+        <div class="photo-stats-grid">
+          <div><div class="photo-stat-label">List price</div><div class="photo-stat-value">$2.675M</div></div>
+          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">38</div></div>
+          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">6,463 SF</div></div>
+        </div>
+      </div>
+    </div>
       <div class="card">
         <h2>2608 St Marys Street</h2>
         <p><strong>Role:</strong> Upper-tier competitive context</p>
