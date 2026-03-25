@@ -57,26 +57,26 @@
     .label { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .16em; margin-bottom: 12px; font-weight: 700; }
     .tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; max-width: 980px; }
     .tile { background: var(--soft); border: 1px solid var(--line); border-radius: 20px; padding: 22px; font-size: 22px; line-height: 1.45; }
-    .comp-slide { display: grid; grid-template-columns: 1.02fr .98fr; gap: 24px; align-items: stretch; }
-    .comp-slide .card { padding: 20px; display:flex; flex-direction:column; }
-    .comp-slide .card p { font-size: 18px; line-height: 1.36; margin: 0 0 10px; }
+    .comp-slide { display: grid; grid-template-columns: 1.04fr .96fr; gap: 18px; align-items: start; }
+    .comp-slide .card { padding: 16px; display:flex; flex-direction:column; }
+    .comp-slide .card p { font-size: 16px; line-height: 1.28; margin: 0 0 8px; }
     .mini-map { margin-top: 14px; }
     .dark-map .label { color: var(--muted); }
-    .mini-map img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); max-height: 150px; object-fit: cover; }
-    .map-key { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; color: var(--muted); font-size: 11px; }
+    .mini-map img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); max-height: 112px; object-fit: cover; }
+    .map-key { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; color: var(--muted); font-size: 10px; }
     .map-key span { display: inline-flex; align-items: center; gap: 7px; }
     .star-key, .dot-key { display: inline-block; }
     .star-key { width: 11px; height: 11px; background: var(--accent); clip-path: polygon(50% 0%, 61% 36%, 98% 36%, 68% 57%, 79% 93%, 50% 71%, 21% 93%, 32% 57%, 2% 36%, 39% 36%); }
     .dot-key { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); }
-    .img-placeholder { border: 1px solid var(--line); border-radius: 24px; min-height: 420px; display: flex; align-items: center; justify-content: center; color: rgba(244,211,125,.55); font-size: 18px; padding: 18px; background: rgba(255,255,255,.02); overflow: hidden; }
+    .img-placeholder { border: 1px solid var(--line); border-radius: 24px; min-height: 320px; display: flex; align-items: center; justify-content: center; color: rgba(244,211,125,.55); font-size: 18px; padding: 18px; background: rgba(255,255,255,.02); overflow: hidden; }
     .img-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 14px; background: #0f0f0f; }
-    .photo-stack { display: flex; flex-direction: column; gap: 10px; }
+    .photo-stack { display: flex; flex-direction: column; gap: 8px; }
     .photo-stack .mini-map { margin-top: 0; }
-    .photo-stats { border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015)); padding: 10px 12px; box-shadow: inset 0 1px 0 rgba(255,255,255,.03); margin-top: auto; }
+    .photo-stats { border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015)); padding: 8px 10px; box-shadow: inset 0 1px 0 rgba(255,255,255,.03); margin-top: auto; }
     .photo-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
     .photo-stat { padding: 2px 4px; }
-    .photo-stat-label { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; margin-bottom: 4px; }
-    .photo-stat-value { color: var(--text); font-size: 17px; line-height: 1.05; font-weight: 700; letter-spacing: -.02em; }
+    .photo-stat-label { color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: 8px; margin-bottom: 3px; }
+    .photo-stat-value { color: var(--text); font-size: 15px; line-height: 1.02; font-weight: 700; letter-spacing: -.01em; }
     table { width: 100%; border-collapse: collapse; margin-top: 14px; }
     th, td { border-bottom: 1px solid var(--line); padding: 14px 10px; text-align: left; vertical-align: top; }
     th { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .12em; }
