@@ -71,10 +71,11 @@
     .img-placeholder { border: 1px solid var(--line); border-radius: 24px; min-height: 420px; display: flex; align-items: center; justify-content: center; color: rgba(244,211,125,.55); font-size: 18px; padding: 18px; background: rgba(255,255,255,.02); overflow: hidden; }
     .img-placeholder img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 14px; background: #0f0f0f; }
     .photo-stack { display: flex; flex-direction: column; gap: 14px; }
-    .photo-stats { border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.02); padding: 14px 16px; }
-    .photo-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .photo-stat-label { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: 11px; margin-bottom: 4px; }
-    .photo-stat-value { color: var(--text); font-size: 18px; line-height: 1.2; font-weight: 600; }
+    .photo-stats { border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015)); padding: 14px 16px; box-shadow: inset 0 1px 0 rgba(255,255,255,.03); }
+    .photo-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .photo-stat { padding: 2px 4px; }
+    .photo-stat-label { color: var(--muted); text-transform: uppercase; letter-spacing: .14em; font-size: 10px; margin-bottom: 6px; }
+    .photo-stat-value { color: var(--text); font-size: 21px; line-height: 1.05; font-weight: 700; letter-spacing: -.03em; }
     table { width: 100%; border-collapse: collapse; margin-top: 14px; }
     th, td { border-bottom: 1px solid var(--line); padding: 14px 10px; text-align: left; vertical-align: top; }
     th { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .12em; }
@@ -269,9 +270,9 @@
       <div class="img-placeholder"><img src="./assets/3304-cheswick.jpg" alt="3304 Cheswick Drive" /></div>
       <div class="photo-stats">
         <div class="photo-stats-grid">
-          <div><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.85M</div></div>
-          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">0</div></div>
-          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,316 SF</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.85M</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">0</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,316 SF</div></div>
         </div>
       </div>
     </div>
@@ -296,9 +297,9 @@
       <div class="img-placeholder"><img src="./assets/1829-ridge.jpg" alt="1829 Ridge Rd" /></div>
       <div class="photo-stats">
         <div class="photo-stats-grid">
-          <div><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.52M</div></div>
-          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">Unknown</div></div>
-          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">4,692 SF</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.52M</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">Unknown</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">4,692 SF</div></div>
         </div>
       </div>
     </div>
@@ -324,9 +325,9 @@
       <div class="img-placeholder"><img src="./assets/909-lake-boone.jpg" alt="909 Lake Boone Trail" /></div>
       <div class="photo-stats">
         <div class="photo-stats-grid">
-          <div><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.97M</div></div>
-          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">178</div></div>
-          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,300 SF</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Sold price</div><div class="photo-stat-value">$1.97M</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">178</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,300 SF</div></div>
         </div>
       </div>
     </div>
@@ -357,9 +358,9 @@
       <div class="img-placeholder"><img src="./assets/308-cambridge-woods.jpg" alt="308 Cambridge Woods Way" /></div>
       <div class="photo-stats">
         <div class="photo-stats-grid">
-          <div><div class="photo-stat-label">List price</div><div class="photo-stat-value">$1.90M</div></div>
-          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">0</div></div>
-          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,013 SF</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">List price</div><div class="photo-stat-value">$1.90M</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">0</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,013 SF</div></div>
         </div>
       </div>
     </div>
@@ -384,9 +385,9 @@
       <div class="img-placeholder"><img src="./assets/2908-claremont.jpg" alt="2908 Claremont Road" /></div>
       <div class="photo-stats">
         <div class="photo-stats-grid">
-          <div><div class="photo-stat-label">List price</div><div class="photo-stat-value">$2.495M</div></div>
-          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">98</div></div>
-          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,884 SF</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">List price</div><div class="photo-stat-value">$2.495M</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">98</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">5,884 SF</div></div>
         </div>
       </div>
     </div>
@@ -411,9 +412,9 @@
       <div class="img-placeholder"><img src="./assets/2608-st-marys.jpg" alt="2608 St Marys Street" /></div>
       <div class="photo-stats">
         <div class="photo-stats-grid">
-          <div><div class="photo-stat-label">List price</div><div class="photo-stat-value">$2.675M</div></div>
-          <div><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">38</div></div>
-          <div><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">6,463 SF</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">List price</div><div class="photo-stat-value">$2.675M</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Days on market</div><div class="photo-stat-value">38</div></div>
+          <div class="photo-stat"><div class="photo-stat-label">Square footage</div><div class="photo-stat-value">6,463 SF</div></div>
         </div>
       </div>
     </div>
